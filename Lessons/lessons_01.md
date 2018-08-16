@@ -169,7 +169,7 @@ If you do not pass all projects by the last day of the term, the following happe
 
 **Ongoing suggested deadlines for individual projects**
 
-[!alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/October/580d1499_screen-shot-2016-10-23-at-12.50.15-pm/screen-shot-2016-10-23-at-12.50.15-pm.png)
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/October/580d1499_screen-shot-2016-10-23-at-12.50.15-pm/screen-shot-2016-10-23-at-12.50.15-pm.png)
 
 The deadlines you see in your classroom are suggestions for when you should ideally pass each project. They are meant to
 help keep you on track so that you maintain an appropriate pace throughout the program—one that will see you graduate 
@@ -199,13 +199,13 @@ One area we'd love to hear from you on is how the Nanodegree impacts your career
 how you feel about your current confidence below, and we'll check back in with you near the end of the program to hear 
 how you've progressed!
 
-[!quiz](own)
+![quiz](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/01_01.PNG)
 
 ## 11. Self-driving car history
 
 **Self-Driving Car History**
 
-[!alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/October/580ea373_stanley/stanley.jpg)
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/October/580ea373_stanley/stanley.jpg)
 
 The recent advancements in self-driving cars are built on decades of work by people around the world.
 
@@ -227,4 +227,4 @@ We hope you enjoy it as much as we did!
 
 **And now for a fun quiz... Test your knowledge of the self-driving car industry!**
 
-[!quiz](own)
+![quiz](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/01_02.PNG)
