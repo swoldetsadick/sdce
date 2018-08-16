@@ -95,9 +95,10 @@ you run the code in the quiz, your image will be output with an example image ne
 that your input image (on the left below) looks like the example image on the right.
 
 ![alt text](https://s3.amazonaws.com/udacity-sdc/new+folder/test.jpg)
+
 ![alt text](https://s3.amazonaws.com/udacity-sdc/new+folder/test_color_selected.jpg)
 
-The original image (left), and color selection applied (right).
+The original image (top), and color selection applied (below).
 
 **Quiz**
 
