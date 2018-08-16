@@ -375,6 +375,22 @@ re ever feeling confused about what the parameters in a particular function are 
 wealth of information at [opencv.org](http://opencv.org/).
 
 ### 11. Canny edge detection
+
+[![edge detection](http://img.youtube.com/vi/Av2GsgQWX8I/0.jpg)](https://youtu.be/Av2GsgQWX8I "edge detection")
+
+[![edge detection](http://img.youtube.com/vi/LQM--KPJjD0/0.jpg)](https://youtu.be/LQM--KPJjD0 "edge detection")
+
+**Note! The standard location of the origin (x=0, y=0) for images is in the top left corner with y values increasing 
+downward and x increasing to the right. This might seem weird at first, but if you think about an image as a matrix, it 
+makes sense that the "00" element is in the upper left.**
+
+Now let's try a quiz. Below, I’m plotting a cross section through this image. Where are the areas in the image that are 
+most likely to be identified as edges?
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/October/58014f3a_17-q-canny-intro-quiz-2/17-q-canny-intro-quiz-2.png)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/03_03.PNG)
+
 ### 12. Canny to detect lane lines
 ### 13. Quiz: Canny edges
 ### 14. Hough transform
