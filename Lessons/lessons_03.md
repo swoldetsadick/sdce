@@ -315,15 +315,11 @@ The original image (top), region and color selection applied (middle) and lines 
 `fit_bottom = np.polyfit((left_bottom[0], right_bottom[0]), (left_bottom[1], right_bottom[1]), 1)` <br>
 
 `# Mask pixels below the threshold` <br>
-color_thresholds = (image[:,:,0] < rgb_threshold[0]) | \
-                    (image[:,:,1] < rgb_threshold[1]) | \
-                    (image[:,:,2] < rgb_threshold[2])
+`color_thresholds = (image[:,:,0] < rgb_threshold[0]) | (image[:,:,1] < rgb_threshold[1]) | (image[:,:,2] < rgb_threshold[2])` <br>
 
 `# Find the region inside the lines` <br>
-XX, YY = np.meshgrid(np.arange(0, xsize), np.arange(0, ysize))
-region_thresholds = (YY > (XX*fit_left[0] + fit_left[1])) & \
-                    (YY > (XX*fit_right[0] + fit_right[1])) & \
-                    (YY < (XX*fit_bottom[0] + fit_bottom[1]))
+`XX, YY = np.meshgrid(np.arange(0, xsize), np.arange(0, ysize))` <br>
+`region_thresholds = (YY > (XX*fit_left[0] + fit_left[1])) & (YY > (XX*fit_right[0] + fit_right[1])) & (YY < (XX*fit_bottom[0] + fit_bottom[1]))` <br>
                     
 `# Mask color and region selection` <br>
 `color_select[color_thresholds | ~region_thresholds] = [0, 0, 0]` <br>
@@ -358,11 +354,29 @@ methods.
 So, what is computer vision?
 
 ### 10. What is computer vision
+
+[![region masking](http://img.youtube.com/vi/wxQhfSdxjKU/0.jpg)](https://youtu.be/wxQhfSdxjKU "region masking")
+
+In rest of this lesson, we’ll introduce some computer vision techniques with enough detail for you to get an intuitive 
+feel for how they work.
+
+You'll learn much more about these topics during the Computer Vision module later in the program.
+
+We also recommend the free Udacity course, [Introduction to Computer Vision](https://www.udacity.com/course/introduction-to-computer-vision--ud810).
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b4d197_image14/image14.png)
+
+Throughout this Nanodegree Program, we will be using Python with OpenCV for computer vision work. OpenCV stands for 
+Open-Source Computer Vision. For now, you don't need to download or install anything, but later in the program we'll 
+help you get these tools installed on your own computer.
+
+OpenCV contains extensive libraries of functions that you can use. The OpenCV libraries are well documented, so if you’
+re ever feeling confused about what the parameters in a particular function are doing, or anything else, you can find a 
+wealth of information at [opencv.org](http://opencv.org/).
+
 ### 11. Canny edge detection
 ### 12. Canny to detect lane lines
 ### 13. Quiz: Canny edges
 ### 14. Hough transform
 ### 15. Hough transform to find lane lines
 ### 16. Quiz: Hough transform
-
-mm
