@@ -524,5 +524,59 @@ The original image (top), and edge detection applied (bottom).
 ![alt text](https://lh3.googleusercontent.com/yYEdL7cBbgy-puiBVzkU1Jzz-gAFbCmi1qsFvlKPLGoKOS01DEg0itjaqq9Kkaid6jeZUkU24diR24jNuQ)
 
 ### 14. Hough transform
+
+**Using the Hough Transform to Find Lines from Canny Edges**
+
+[![hough transform](http://img.youtube.com/vi/JFwj5UtKmPY/0.jpg)](https://youtu.be/JFwj5UtKmPY "hough transform")
+
+In image space, a line is plotted as x vs. y, but in 1962, Paul Hough devised a method for representing lines in 
+parameter space, which we will call “Hough space” in his honor.
+
+In Hough space, I can represent my "x vs. y" line as a point in "m vs. b" instead. The Hough Transform is just the 
+conversion from image space to Hough space. So, the characterization of a line in image space will be a single point at 
+the position (m, b) in Hough space.
+
+So now I’d like to check your intuition… if a **line** in image space corresponds to a **point** in Hough space, what 
+would **two parallel lines** in image space correspond to in Hough space?
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/October/57efe077_22-q-hough-intro-quiz/22-q-hough-intro-quiz.png)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/03_04.PNG)
+
+Alright, so a line in image space corresponds to a point in Hough space. What does a point in image space correspond to 
+in Hough space?
+
+A single point in image space has many possible lines that pass through it, but not just any lines, only those with 
+particular combinations of the m and b parameters. Rearranging the equation of a line, we find that a single point (x,y) 
+corresponds to the line b = y - xm.
+
+So what is the representation of a **point** in image space in Hough space?
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/October/57efdd4a_23-q-hough-second-quiz/23-q-hough-second-quiz.png)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/03_05.PNG)
+
+What if you have 2 points in image space. What would that look like in Hough space?
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/October/57efdd0a_23-q-hough-second-quiz-copy/23-q-hough-second-quiz-copy.png)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/03_06.PNG)
+
+Alright, now we have two intersecting lines in Hough Space. How would you represent their intersection at the point 
+(m0, b0) in image space?
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/November/58212f80_25-q-hough-fourth-quiz-updated2/25-q-hough-fourth-quiz-updated2.png)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/03_07.PNG)
+
+[![hough transform](http://img.youtube.com/vi/XQf7FOhwOVk/0.jpg)](https://youtu.be/XQf7FOhwOVk "hough transform")
+
+So, what happens if we run a Hough Transform on an image of a square? What will the corresponding plot in Hough space 
+look like?
+
+[![hough transform](http://img.youtube.com/vi/upKjISd3aBk/0.jpg)](https://youtu.be/upKjISd3aBk "hough transform")
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/03_08.PNG)
+
 ### 15. Hough transform to find lane lines
 ### 16. Quiz: Hough transform
