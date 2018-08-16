@@ -340,7 +340,23 @@ region_thresholds = (YY > (XX*fit_left[0] + fit_left[1])) & \
 
 ![alt text](https://lh3.googleusercontent.com/UBjTSEV9h3PBvfMGjfa20Qjd0OH0nrsuBfpy4rU5xcgjvLx3regAxIUvrHRcKS5HTavpCF0buTuKokjdirc)
 
-### 9. Power of cameras
+### 9. Finding lines of any color
+
+**Finding Lines of any Color**
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b4ca33_image30/image30.png)
+
+So you found the lane lines... simple right? Now you’re ready to upload the algorithm to the car and drive autonomously 
+right?? Well, not quite yet ;)
+
+As it happens, lane lines are not always the same color, and even lines of the same color under different lighting 
+conditions (day, night, etc) may fail to be detected by our simple color selection.
+
+What we need is to take our algorithm to the next level to detect lines of any color using sophisticated computer vision 
+methods.
+
+So, what is computer vision?
+
 ### 10. Power of cameras
 ### 11. Power of cameras
 ### 12. Power of cameras
