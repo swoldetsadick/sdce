@@ -134,9 +134,212 @@ The original image (top), and color selection applied (below).
 
 ![alt text](https://lh3.googleusercontent.com/WWBQqIzyzP6MHivKYReCja1v2JJIgZnktfimaQ-f7KQVyeTAKAELjYOoKrYCvudJEN6Ndu9b7NTriFzvaBA)
 
-### 6. Power of cameras
-### 7. Power of cameras
-### 8. Power of cameras
+### 6. Region Masking
+
+[![region masking](http://img.youtube.com/vi/ngN9Cr-QfiI/0.jpg)](https://youtu.be/ngN9Cr-QfiI "region masking")
+
+**Coding up a Region of Interest Mask**
+
+Awesome! Now you've seen that with a simple color selection we have managed to eliminate almost everything in the image 
+except the lane lines.
+
+At this point, however, it would still be tricky to extract the exact lines automatically, because we still have some 
+other objects detected around the periphery that aren't lane lines.
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b4c566_image34/image34.png)
+
+In this case, I'll assume that the front facing camera that took the image is mounted in a fixed position on the car, 
+such that the lane lines will always appear in the same general region of the image. Next, I'll take advantage of this 
+by adding a criterion to only consider pixels for color selection in the region where we expect to find the lane lines.
+
+Check out the code below. The variables left_bottom, right_bottom, and apex represent the vertices of a triangular 
+region that I would like to retain for my color selection, while masking everything else out. Here I'm using a 
+triangular mask to illustrate the simplest case, but later you'll use a quadrilateral, and in principle, you could use 
+any polygon.
+
+`import matplotlib.pyplot as plt` <br>
+`import matplotlib.image as mpimg` <br>
+`import numpy as np` <br>
+
+`# Read in the image and print some stats` <br>
+`image = mpimg.imread('test.jpg')` <br>
+`print('This image is: ', type(image), 'with dimensions:', image.shape)` <br>
+
+`# Pull out the x and y sizes and make a copy of the image` <br>
+`ysize = image.shape[0]` <br>
+`xsize = image.shape[1]` <br>
+`region_select = np.copy(image)` <br>
+
+`# Define a triangle region of interest ` <br>
+`# Keep in mind the origin (x=0, y=0) is in the upper left in image processing` <br>
+`# Note: if you run this code, you'll find these are not sensible values!!` <br>
+`# But you'll get a chance to play with them soon in a quiz ` <br>
+`left_bottom = [0, 539]` <br>
+`right_bottom = [900, 300]` <br>
+`apex = [400, 0]` <br>
+
+`# Fit lines (y=Ax+B) to identify the  3 sided region of interest` <br>
+`# np.polyfit() returns the coefficients [A, B] of the fit` <br>
+`fit_left = np.polyfit((left_bottom[0], apex[0]), (left_bottom[1], apex[1]), 1)` <br>
+`fit_right = np.polyfit((right_bottom[0], apex[0]), (right_bottom[1], apex[1]), 1)` <br>
+`fit_bottom = np.polyfit((left_bottom[0], right_bottom[0]), (left_bottom[1], right_bottom[1]), 1)` <br>
+
+`# Find the region inside the lines` <br>
+`XX, YY = np.meshgrid(np.arange(0, xsize), np.arange(0, ysize))` <br>
+`region_thresholds = (YY > (XX*fit_left[0] + fit_left[1])) & (YY > (XX*fit_right[0] + fit_right[1])) & (YY < (XX*fit_bottom[0] + fit_bottom[1]))` <br>
+
+`# Color pixels red which are inside the region of interest` <br>
+`region_select[region_thresholds] = [255, 0, 0]` <br>
+
+`# Display the image` <br>
+`plt.imshow(region_select)` <br>
+
+`# uncomment if plot does not display` <br>
+`# plt.show()` <br>
+
+### 7. Color and region combined
+
+**Combining Color and Region Selections**
+
+Now you've seen how to mask out a region of interest in an image. Next, let's combine the mask and color selection to 
+pull only the lane lines out of the image.
+
+Check out the code below. Here we’re doing both the color and region selection steps, requiring that a pixel meet both 
+the mask and color selection requirements to be retained.
+
+`import matplotlib.pyplot as plt` <br>
+`import matplotlib.image as mpimg` <br>
+`import numpy as np` <br>
+
+`# Read in the image` <br>
+`image = mpimg.imread('test.jpg')` <br>
+
+`# Grab the x and y sizes and make two copies of the image` <br>
+`# With one copy we'll extract only the pixels that meet our selection,` <br>
+`# then we'll paint those pixels red in the original image to see our selection` <br>
+`# overlaid on the original.` <br>
+`ysize = image.shape[0]` <br>
+`xsize = image.shape[1]` <br>
+`color_select= np.copy(image)` <br>
+`line_image = np.copy(image)` <br>
+
+`# Define our color criteria` <br>
+`red_threshold = 0` <br>
+`green_threshold = 0` <br>
+`blue_threshold = 0` <br>
+`rgb_threshold = [red_threshold, green_threshold, blue_threshold]` <br>
+
+`# Define a triangle region of interest (Note: if you run this code,` <br>
+`# Keep in mind the origin (x=0, y=0) is in the upper left in image processing` <br>
+`# you'll find these are not sensible values!!` <br>
+`# But you'll get a chance to play with them soon in a quiz ;)` <br>
+`left_bottom = [0, 539]` <br>
+`right_bottom = [900, 300]` <br>
+`apex = [400, 0]` <br>
+
+`fit_left = np.polyfit((left_bottom[0], apex[0]), (left_bottom[1], apex[1]), 1)` <br>
+`fit_right = np.polyfit((right_bottom[0], apex[0]), (right_bottom[1], apex[1]), 1)` <br>
+`fit_bottom = np.polyfit((left_bottom[0], right_bottom[0]), (left_bottom[1], right_bottom[1]), 1)` <br>
+
+`# Mask pixels below the threshold` <br>
+`color_thresholds = (image[:,:,0] < rgb_threshold[0]) | (image[:,:,1] < rgb_threshold[1]) | (image[:,:,2] < rgb_threshold[2])` <br>
+
+`# Find the region inside the lines `<br>
+`XX, YY = np.meshgrid(np.arange(0, xsize), np.arange(0, ysize))` <br>
+`region_thresholds = (YY > (XX*fit_left[0] + fit_left[1])) & (YY > (XX*fit_right[0] + fit_right[1])) & (YY < (XX*fit_bottom[0] + fit_bottom[1]))` <br>
+`# Mask color selection `<br>
+`color_select[color_thresholds] = [0,0,0]` <br>
+`# Find where image is both colored right and in the region `<br>
+`line_image[~color_thresholds & region_thresholds] = [255,0,0]` <br>
+
+`# Display our two output images` <br>
+`plt.imshow(color_select)` <br>
+`plt.imshow(line_image)` <br>
+
+`# uncomment if plot does not display` <br>
+`# plt.show()` <br>
+
+In the next quiz, you can vary your color selection and the shape of your region mask (vertices of a triangle 
+left_bottom, right_bottom, and apex), such that you pick out the lane lines and nothing else.
+
+### 8. Quiz: Color - Region
+
+In this next quiz, I've given you the values of red_threshold, green_threshold, and blue_threshold but now you need to 
+modify left_bottom, right_bottom, and apex to represent the vertices of a triangle identifying the region of interest in 
+the image. When you run the code in the quiz, your output result will be several images. Tweak the vertices until your 
+output looks like the examples shown below.
+
+![alt text](https://s3.amazonaws.com/udacity-sdc/new+folder/test.jpg)
+
+![alt text](https://s3.amazonaws.com/udacity-sdc/new+folder/test_color_masked.jpg)
+
+![alt text](https://s3.amazonaws.com/udacity-sdc/new+folder/lines_painted.png)
+
+The original image (top), region and color selection applied (middle) and lines identified (bottom).
+
+**Quiz**
+
+`import matplotlib.pyplot as plt` <br>
+`import matplotlib.image as mpimg` <br>
+`import numpy as np` <br>
+
+`# Read in the image` <br>
+`image = mpimg.imread('test.jpg')` <br>
+
+`# Grab the x and y size and make a copy of the image` <br>
+`ysize = image.shape[0]` <br>
+`xsize = image.shape[1]` <br>
+`color_select = np.copy(image)` <br>
+`line_image = np.copy(image)` <br>
+
+`# Define color selection criteria` <br>
+`# MODIFY THESE VARIABLES TO MAKE YOUR COLOR SELECTION` <br>
+`red_threshold = 200` <br>
+`green_threshold = 200` <br>
+`blue_threshold = 200` <br>
+
+`rgb_threshold = [red_threshold, green_threshold, blue_threshold]` <br>
+
+`# Define the vertices of a triangular mask.` <br>
+`# Keep in mind the origin (x=0, y=0) is in the upper left` <br>
+`# MODIFY THESE VALUES TO ISOLATE THE REGION ` <br>
+`# WHERE THE LANE LINES ARE IN THE IMAGE` <br>
+`left_bottom = [100, 539]` <br>
+`right_bottom = [1000, 539] `<br>
+`apex = [470, 330]` <br>
+
+`# Perform a linear fit (y=Ax+B) to each of the three sides of the triangle `<br>
+`# np.polyfit returns the coefficients [A, B] of the fit` <br>
+`fit_left = np.polyfit((left_bottom[0], apex[0]), (left_bottom[1], apex[1]), 1)` <br>
+`fit_right = np.polyfit((right_bottom[0], apex[0]), (right_bottom[1], apex[1]), 1)` <br>
+`fit_bottom = np.polyfit((left_bottom[0], right_bottom[0]), (left_bottom[1], right_bottom[1]), 1)` <br>
+
+`# Mask pixels below the threshold` <br>
+color_thresholds = (image[:,:,0] < rgb_threshold[0]) | \
+                    (image[:,:,1] < rgb_threshold[1]) | \
+                    (image[:,:,2] < rgb_threshold[2])
+
+`# Find the region inside the lines` <br>
+XX, YY = np.meshgrid(np.arange(0, xsize), np.arange(0, ysize))
+region_thresholds = (YY > (XX*fit_left[0] + fit_left[1])) & \
+                    (YY > (XX*fit_right[0] + fit_right[1])) & \
+                    (YY < (XX*fit_bottom[0] + fit_bottom[1]))
+                    
+`# Mask color and region selection` <br>
+`color_select[color_thresholds | ~region_thresholds] = [0, 0, 0]` <br>
+`# Color pixels red where both color and region selections met` <br>
+`line_image[~color_thresholds & region_thresholds] = [255, 0, 0]` <br>
+
+`# Display the image and show region and color selections` <br>
+`plt.imshow(image)` <br>
+`x = [left_bottom[0], right_bottom[0], apex[0], left_bottom[0]]` <br>
+`y = [left_bottom[1], right_bottom[1], apex[1], left_bottom[1]]` <br>
+`plt.plot(x, y, 'b--', lw=4)` <br>
+`plt.imshow(color_select)` <br>
+`plt.imshow(line_image)` <br>
+
+![alt text](https://lh3.googleusercontent.com/UBjTSEV9h3PBvfMGjfa20Qjd0OH0nrsuBfpy4rU5xcgjvLx3regAxIUvrHRcKS5HTavpCF0buTuKokjdirc)
+
 ### 9. Power of cameras
 ### 10. Power of cameras
 ### 11. Power of cameras
