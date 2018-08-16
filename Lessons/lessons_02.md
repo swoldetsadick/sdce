@@ -158,4 +158,8 @@ of your work from the file interface before clicking Reset Data.
 
 ### 7. Example Jupyter workspace
 
+![quiz](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/02_01.PNG)
+
 ### 8. Example terminal workspace
+
+![quiz](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/02_02.PNG)
