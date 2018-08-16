@@ -357,10 +357,10 @@ methods.
 
 So, what is computer vision?
 
-### 10. Power of cameras
-### 11. Power of cameras
-### 12. Power of cameras
-### 13. Power of cameras
-### 14. Power of cameras
-### 15. Power of cameras
-### 16. Power of cameras
+### 10. What is computer vision
+### 11. Canny edge detection
+### 12. Canny to detect lane lines
+### 13. Quiz: Canny edges
+### 14. Hough transform
+### 15. Hough transform to find lane lines
+### 16. Quiz: Hough transform
