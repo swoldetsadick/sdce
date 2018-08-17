@@ -737,3 +737,5 @@ The original image (top), edge detection and Hough transform (middle), parameter
 `plt.imshow(lines_edges)`
 
 ![alt text](https://lh3.googleusercontent.com/4M1YhYmUk4b33PhKIbySB5onBSKaTBzxfErZLRPamxmCGD51CYT5gykMCal2SgzIkHf5no7-iLqqvKM4gw)
+
+![alt text](https://lh3.googleusercontent.com/VJfmuM__9gn7L96ueuycaC0IKIIbgT88paqVb197gvFgkeo9nRRoKQcbZ7uD1GO0P8qzmNftcBG5aYjb0kg)
