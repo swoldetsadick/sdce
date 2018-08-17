@@ -163,6 +163,8 @@ your success with your network.
 
 ### 5. Finding lane lines
 
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Projects/01_find_lane_lines_on_the_road/01_01.PNG)
+
 ### 6. Project instructions local setup
 
 **Local Users:**
@@ -299,4 +301,4 @@ Warning! The image is ~2GB!
 
 ### 9. Project: Finding lane lines on the road
 
-
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Projects/01_find_lane_lines_on_the_road/01_02.PNG)
