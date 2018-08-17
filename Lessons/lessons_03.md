@@ -669,3 +669,71 @@ though, you could use this same method to mask an arbitrarily complex polygon re
 ready to apply the skills you've learned to do the project at the end of this lesson.
 
 ### 16. Quiz: Hough transform
+
+Now it's your turn to play with the Hough Transform on an edge-detected image. You'll start with the image on the left 
+below. If you "Test Run" the quiz, you'll get output that looks like the center image. Your job is to modify the 
+parameters for the Hough Transform and impose a region of interest mask to get output that looks like the image on the 
+right. In the code, I've given you a framework for defining a quadrilateral region of interest mask.
+
+![alt text](https://s3.amazonaws.com/udacity-sdc/new+folder/exit-ramp.jpg)
+
+![alt text](https://s3.amazonaws.com/udacity-sdc/new+folder/hough_test.jpg)
+
+![alt text](https://s3.amazonaws.com/udacity-sdc/new+folder/exit_ramp_hough_masked.jpg)
+
+The original image (top), edge detection and Hough transform (middle), parameters optimized and region masked (bottom).
+
+`import matplotlib.pyplot as plt` <br>
+`import matplotlib.image as mpimg` <br>
+`import numpy as np` <br>
+`import cv2` <br>
+
+`# Read in and grayscale the image` <br>
+`image = mpimg.imread('exit-ramp.jpg')` <br>
+`gray = cv2.cvtColor(image,cv2.COLOR_RGB2GRAY)` <br>
+
+`# Define a kernel size and apply Gaussian smoothing` <br>
+`kernel_size = 3` <br>
+`blur_gray = cv2.GaussianBlur(gray,(kernel_size, kernel_size),0)` <br>
+
+`# Define our parameters for Canny and apply` <br>
+`low_threshold = 115` <br>
+`high_threshold = 125` <br>
+`edges = cv2.Canny(blur_gray, low_threshold, high_threshold)` <br>
+
+`# Next we'll create a masked edges image using cv2.fillPoly()` <br>
+`mask = np.zeros_like(edges)`  <br>  
+`ignore_mask_color = 255` <br>   
+
+`# This time we are defining a four sided polygon to mask` <br>
+`imshape = image.shape` <br>
+`vertices = np.array([[(-90, 539),(450, 285), (495, 285), (1000, 539)]], dtype=np.int32)` <br>
+`cv2.fillPoly(mask, vertices, ignore_mask_color)` <br>
+`masked_edges = cv2.bitwise_and(edges, mask)` <br>
+
+`# Define the Hough transform parameters` <br>
+`# Make a blank the same size as our image to draw on` <br>
+`rho = 1 # distance resolution in pixels of the Hough grid` <br>
+`theta = np.pi/180 # angular resolution in radians of the Hough grid` <br>
+`threshold = 175     # minimum number of votes (intersections in Hough grid cell)` <br>
+`min_line_length = 10 #minimum number of pixels making up a line` <br>
+`max_line_gap = 21    # maximum gap in pixels between connectable line segments` <br>
+`line_image = np.copy(image)*0 # creating a blank to draw lines on` <br>
+
+`# Run Hough on edge detected image` <br>
+`# Output "lines" is an array containing endpoints of detected line segments` <br>
+`lines = cv2.HoughLinesP(masked_edges, rho, theta, threshold, np.array([]), min_line_length, max_line_gap)` <br>
+
+`# Iterate over the output "lines" and draw lines on a blank image` <br>
+`for line in lines:` <br>
+    `for x1,y1,x2,y2 in line:` <br>
+        `cv2.line(line_image,(x1,y1),(x2,y2), (255,0,0), 10)` <br>
+
+`# Create a "color" binary image to combine with line image` <br>
+`color_edges = np.dstack((edges, edges, edges))` <br>
+
+`# Draw the lines on the edge image` <br>
+`lines_edges = cv2.addWeighted(color_edges, 0.8, line_image, 1, 0)` <br>
+`plt.imshow(lines_edges)`
+
+![alt text](https://lh3.googleusercontent.com/4M1YhYmUk4b33PhKIbySB5onBSKaTBzxfErZLRPamxmCGD51CYT5gykMCal2SgzIkHf5no7-iLqqvKM4gw)
