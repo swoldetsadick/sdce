@@ -33,9 +33,13 @@ a good idea to get a refresher before you start working on the project!
 
 **Already know this content in your own neural network? Feel free to skip ahead!**
 
-### .
+### 5. Quiz: Housing prices
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+[![quiz housing prices](http://img.youtube.com/vi/8CSBiVKu35Q/0.jpg)](https://youtu.be/8CSBiVKu35Q "quiz housing prices")
+
+![housing-prices](https://d17h27t6h515a5.cloudfront.net/topher/2017/November/5a0a88f8_house/house.png)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/03_01.PNG)
 
 ### .
 
