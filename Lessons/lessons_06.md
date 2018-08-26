@@ -39,31 +39,60 @@ a good idea to get a refresher before you start working on the project!
 
 ![housing-prices](https://d17h27t6h515a5.cloudfront.net/topher/2017/November/5a0a88f8_house/house.png)
 
-![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/03_01.PNG)
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_01.PNG)
 
-### .
+### 6. Solution: Housing prices
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+[![solution housing prices](http://img.youtube.com/vi/uhdTulw9-Nc/0.jpg)](https://youtu.be/uhdTulw9-Nc "solution housing prices")
 
-### .
+### 7. Linear to Logistic Regression
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+**Linear to Logistic Regression**
 
-### .
+Linear regression helps predict values on a continuous spectrum, like predicting what the price of a house will be.
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+How about classifying data among discrete classes?
 
-### .
+Here are examples of classification tasks:
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+* Determining whether a patient has cancer
+* Identifying the species of a fish
+* Figuring out who's talking on a conference call
 
-### .
+Classification problems are important for self-driving cars. Self-driving cars might need to classify whether an object 
+crossing the road is a car, pedestrian, and a bicycle. Or they might need to identify which type of traffic sign is 
+coming up, or what a stop light is indicating.
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+In the next video, Luis will demonstrate a classification algorithm called "logistic regression". He'll use logistic 
+regression to predict whether a student will be accepted to a university.
 
-### .
+Linear regression leads to logistic regression and ultimately neural networks, a more advanced classification tool.
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+### 8. Classification problems 1
+
+**Classification Problems**
+
+We'll start by defining what we mean by classification problems, and applying it to a simple example.
+
+[![class prob 1](http://img.youtube.com/vi/Dh625piH7Z0/0.jpg)](https://youtu.be/Dh625piH7Z0 "class prob 1")
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_02.PNG)
+
+### 9. Classification problems 2
+
+[![class prob 2](http://img.youtube.com/vi/46PywnGa_cQ/0.jpg)](https://youtu.be/46PywnGa_cQ "class prob 2")
+
+### 10. Linear boundaries
+
+[![linear boundaries](http://img.youtube.com/vi/X-uMlsBi07k/0.jpg)](https://youtu.be/X-uMlsBi07k "linear boundaries")
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_03.PNG)
+
+### 11. Higher dimensions
+
+[![higher dimensions](http://img.youtube.com/vi/eBHunImDmWw/0.jpg)](https://youtu.be/eBHunImDmWw "higher dimensions")
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_04.PNG)
 
 ### .
 
