@@ -147,9 +147,8 @@ This new improved pipeline is then run on a second video.
     
     For example, yellow, orange, and brown, are all the same “hue” (actual color), they differ only in brightness.
     Hence, it is very possible that proposed color detection may not be able to generalize.
-    
-    
-    An improvement proposal would be to apply grayscale on the different R, G and B channels of the original image 
+
+    > An improvement proposal would be to apply grayscale on the different R, G and B channels of the original image 
     separately, in addition to Canny and blurring/smoothing algorithms then merge the results.
 
 * On region proposal
@@ -167,8 +166,7 @@ This new improved pipeline is then run on a second video.
     
     In the second case, we might totally miss out in detecting lane lines.
     
-    
-    One improvement proposal would be here to completely do away with region proposal early on, and re-introduce it 
+    > One improvement proposal would be here to completely do away with region proposal early on, and re-introduce it 
     later-on, once some lanes are detected by specifying which region could be of interest potentially using possible 
     detected lanes.
 
@@ -180,8 +178,7 @@ This new improved pipeline is then run on a second video.
     
     However, we have not delved into exploring differing types of blurring and edge detection algorithms.
     
-    
-    A proposition here would be to implement edge detection algorithms such as phase stretch transform and phase 
+    > A proposition here would be to implement edge detection algorithms such as phase stretch transform and phase 
     congruency based edge detectors, or the more recent topology based edge detector.
     A go to alternative to gaussian blurring would be median blurring.
     
@@ -203,8 +200,7 @@ This new improved pipeline is then run on a second video.
     Additionally, linear regression only extrapolates line correctely when driving on a straight line. Curvatures would
     be a problem to extrapolate.
     
-    
-    A proposal to solve the first porblem would be to create additional point on the line on top of the image if said
+    > A proposal to solve the first porblem would be to create additional point on the line on top of the image if said
     line is not an outlier to compensate for bottom points over-weight.
     For taking curvature into account, use non-parametric regession methods such as splines or kernel regressions to fit
     a line onto the point cloud.
