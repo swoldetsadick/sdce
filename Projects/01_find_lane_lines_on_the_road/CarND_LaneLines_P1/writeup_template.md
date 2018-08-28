@@ -81,7 +81,29 @@ After this process, only white and yellow elements, of certain HSV values, of th
 ![]()
 _Color filtering_
 
-3. Grayscale, Canny and Burring
+3. Grayscale, Canny and Blurring
+
+Immediately after color selection, images are grayscaled and a Canny edge detection algorithm is run over the resulting
+black and white image. Canny is a gradient based edge detector that, very much like other first order difference based
+edge detectors has two parameters to tune. We have not delved into tuning parameters here as taking threshold values
+observed in lesson 3 give decent results.
+The resulting edges have a lot of noise, and in order to remove and smooth lines, we use a gaussian blurring algorithm
+of kernel size 11.
+
+![]()
+_Grayscaled image_
+
+![]()
+_Canny_
+
+![]()
+_ Blurred image_
+
+4. Hough lines
+
+Once only edges are extracted from the natural images, only straight line edges are of interest of lane lines. Hence,
+we apply a Hough transform algorithm
+
 
 
 
