@@ -204,3 +204,7 @@ This new improved pipeline is then run on a second video.
     line is not an outlier to compensate for bottom points over-weight.
     For taking curvature into account, use non-parametric regession methods such as splines or kernel regressions to fit
     a line onto the point cloud.
+    
+    
+I have used Wikipedia as main source of information, also the official documentation of scipy and open CV python to 
+complete this project.
