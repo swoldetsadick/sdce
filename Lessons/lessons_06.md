@@ -94,42 +94,75 @@ We'll start by defining what we mean by classification problems, and applying it
 
 ![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_04.PNG)
 
-### .
+### 12. Perceptrons
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+[![perceptrons](http://img.youtube.com/vi/hImSxZyRiOw/0.jpg)](https://youtu.be/hImSxZyRiOw "perceptrons")
 
-### .
+_Corrections:_
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+* _At 3:07, the title says "Set Function". It should be "Step Function"._
+* _At 3:12, the second option for y should be "0 if x<0"._
 
-### .
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_05.PNG)
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+### 13. Perceptrons II
 
-### .
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/58a49d8a_hq-perceptron/hq-perceptron.png)
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+**Perceptron**
 
-### .
+Now you've seen how a simple neural network makes decisions: by taking in input data, processing that information, and 
+finally, producing an output in the form of a decision! Let's take a deeper dive into the university admission example 
+to learn more about processing the input data.
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+Data, like test scores and grades, are fed into a network of interconnected nodes. These individual nodes are [called](https://en.wikipedia.org/wiki/Perceptron) 
+perceptrons, or artificial neurons, and they are the basic unit of a neural network. Each one looks at input data and 
+decides how to categorize that data. In the example above, the input either passes a threshold for grades and test 
+scores or doesn't, and so the two categories are: yes (passed the threshold) and no (didn't pass the threshold). These 
+categories then combine to form a decision -- for example, if both nodes produce a "yes" output, then this student gains 
+admission into the university.
 
-### .
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/58a49d9f_hq-new-plot-perceptron-combine-v2/hq-new-plot-perceptron-combine-v2.png)
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+Let's zoom in even further and look at how a single perceptron processes input data.
 
-### .
+The perceptron above is one of the two perceptrons from the video that help determine whether or not a student is 
+accepted to a university. It decides whether a student's grades are high enough to be accepted to the university. You 
+might be wondering: "How does it know whether grades or test scores are more important in making this acceptance 
+decision?" Well, when we initialize a neural network, we don't know what information will be most important in making a 
+decision. It's up to the neural network to learn for itself which data is most important and adjust how it considers 
+that data.
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+It does this with something called **weights**.
 
-### .
+### 14. Why "Neuronal Network" ?
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+[![why nn](http://img.youtube.com/vi//0.jpg)]( "why nn")
 
-### .
+### 15. Perceptrons as logical operators
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+[![perceptrons as l o](http://img.youtube.com/vi//0.jpg)]( "perceptrons as l o")
 
-### .
+### 16. Perceptrons trick
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+[![perceptrons trick](http://img.youtube.com/vi//0.jpg)]( "perceptrons trick")
+
+### 17. Perceptrons algorithms
+
+[![perceptrons algorithm](http://img.youtube.com/vi//0.jpg)]( "perceptrons algorithm")
+
+### 18. Non-linear regions
+
+[![NL regions](http://img.youtube.com/vi//0.jpg)]( "NL regions")
+
+### 19. Error functions
+
+[![err func](http://img.youtube.com/vi//0.jpg)]( "err func")
+
+### 20. Log-loss error function
+
+[![log loss err func](http://img.youtube.com/vi//0.jpg)]( "log loss err func")
+
+### 21. Discrete vs Continuous
+
+[![D vs C](http://img.youtube.com/vi//0.jpg)]( "D vs C")
