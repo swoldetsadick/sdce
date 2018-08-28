@@ -22,25 +22,25 @@
 
 * Make a pipeline that finds lane lines on the road
 
---* Build a five steps pipeline that detects lane lines in an image (color photo)
+    * Build a five steps pipeline that detects lane lines in an image (color photo)
 
---* Apply the pipeline to a video
+    * Apply the pipeline to a video
 
---* Improve on the line extrapolation algorithm
+    * Improve on the line extrapolation algorithm
 
---* Apply the new pipeline to a different video
+    * Apply the new pipeline to a different video
 
 * Reflect on your work in a written report
 
---* On color detection
+    * On color detection
 
---* On region proposal
+    * On region proposal
 
---* Canny and Hough algorithms
+    * Canny and Hough algorithms
 
---* On angle and position based outlier elimination
+    * On angle and position based outlier elimination
 
---* On regression
+    * On regression
 
 [//]: # (Image References)
 [image1]: ./examples/grayscale.jpg "Grayscale"
@@ -54,9 +54,38 @@ The end result of the project itself can be found at this [link](https://github.
 
 ## Reflection
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+### 1. Lane recognition pipeline
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+The pipeline consisted of 5 steps. 
+
+1. Region selection
+
+Immediately after reading in the image itself, we apply a **region selection** algorithm to it. The selection region is 
+in the form of a trapezoid shape, wider at the bottom to capture a maximum width of the image. The length of the 
+trapezoid is selected so it includes the maximum length of lanes, without including far way object and/or the horizon.
+
+![]()
+_Original Image_
+
+![]()
+_Proposed region_
+
+2. Color selection
+
+The resulting image is then put through a color selecting algorithm. Indeed, lane lines that must be detected in this
+project have white or yellow color. This is achieved by first changing the representation of the input image from RGB
+to HSV (Hue, Saturation, Value) representation, that is better suited to OpenCV's color filtering algorithms from 
+literature. Then two different mask one for yellow and one for white are built, combined and applied to the imput image.
+After this process, only white and yellow elements, of certain HSV values, of the input image are kept.
+
+![]()
+_Color filtering_
+
+3. Grayscale, Canny and Burring
+
+
+
+I converted the images to grayscale, then I .... 
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
 
