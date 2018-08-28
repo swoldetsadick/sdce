@@ -8,11 +8,11 @@
 
 ### Application is focused on detecting road lane lines via classical computer vision methods.
 
-[![Generic badge](https://img.shields.io/badge/<SUBJECT>-python-blue.svg)](https://shields.io/)
-[![Generic badge](https://img.shields.io/badge/<SUBJECT>-opencv-blue.svg)](https://shields.io/)
-[![Generic badge](https://img.shields.io/badge/<SUBJECT>-scikit learn-blue.svg)](https://shields.io/)
-[![Generic badge](https://img.shields.io/badge/<SUBJECT>-computer vision>-greensvg)](https://shields.io/)
-[![Generic badge](https://img.shields.io/badge/<SUBJECT>-udacity-yellow.svg)](https://shields.io/)   
+[![Generic badge](https://img.shields.io/badge/framework-python-blue.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/framework-opencv-blue.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/framework-scikit.learn-blue.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/domain-computer.vision-green.svg)](https://shields.io/)
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://classroom.udacity.com/) 
 
 ---
 
