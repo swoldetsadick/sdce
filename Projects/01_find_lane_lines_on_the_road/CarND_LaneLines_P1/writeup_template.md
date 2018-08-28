@@ -12,7 +12,7 @@
 [![Generic badge](https://img.shields.io/badge/framework-opencv-blue.svg)](https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_tutorials.html)
 [![Generic badge](https://img.shields.io/badge/framework-scikit.learn-blue.svg)](http://scikit-learn.org/stable/)
 [![Generic badge](https://img.shields.io/badge/domain-computer.vision-green.svg)](https://en.wikipedia.org/wiki/Computer_vision)
-[![Website shields.io](https://img.shields.io/Udacity-up-down-green-red/http/shields.io.svg)](https://classroom.udacity.com/) 
+[![Website udacity.com](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://classroom.udacity.com/) 
 
 ---
 
