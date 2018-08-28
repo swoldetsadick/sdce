@@ -5,7 +5,7 @@
 ### This project is  
 ### use some other method and submit a pdf if you prefer.
 
-[![Reviewed by Hound][hound-badge-image]][hound]
+# factory_bot [![Build Status][ci-image]][ci] [![Code Climate][grade-image]][grade] [![Gem Version][version-image]][version] [![Reviewed by Hound][hound-badge-image]][hound]
 ---
 
 **Finding Lane Lines on the Road**
