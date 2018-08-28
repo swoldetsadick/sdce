@@ -19,9 +19,10 @@
 ## Project writeup
 
 ### The goals of this project are the following:
-# * Make a pipeline that finds lane lines on the road
-### --* Buils a five steps pipeline that detects lane lines in an image (color photo)
-# * Reflect on your work in a written report
+* Make a pipeline that finds lane lines on the road
+--* Buils a five steps pipeline that detects lane lines in an image (color photo)
+
+* Reflect on your work in a written report
 
 
 [//]: # (Image References)
