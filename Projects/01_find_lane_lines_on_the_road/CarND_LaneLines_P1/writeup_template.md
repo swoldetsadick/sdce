@@ -1,9 +1,11 @@
 # **Finding Lane Lines on the Road** 
 
-## Writeup Template
+## Project writeup
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
+### This project is  
+### use some other method and submit a pdf if you prefer.
 
+[![Reviewed by Hound][hound-badge-image]][hound]
 ---
 
 **Finding Lane Lines on the Road**
