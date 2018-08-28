@@ -2,11 +2,11 @@
 
 ## Project writeup
 
-### This project writeup concludes the first three lessons of the first term of the self-driving car nano-degree program from Udacity, focused on fundamental in computer vision.
+### This project writeup concludes the first three lessons of the first term of the self-driving car nano-degree program from Udacity focused on fundamental in computer vision.
 
-### The lessons revisit fundamental notions of computer vision, and this project make use of Python programming language and Python modules such as scikit learn and OpenCV to propose applications.
+### The lessons revisit fundamental notions of computer vision, and this project makes use of Python programming language and Python modules such as scikit learn and OpenCV to propose an application of presented notions.
 
-### Application is focused on detecting road lane lines via classical computer vision methods.
+### Said application is focused on detecting road lane lines via classical computer vision methods.
 
 [![Generic badge](https://img.shields.io/badge/framework-python-blue.svg)](https://www.python.org/)
 [![Generic badge](https://img.shields.io/badge/framework-opencv-blue.svg)](https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_tutorials.html)
