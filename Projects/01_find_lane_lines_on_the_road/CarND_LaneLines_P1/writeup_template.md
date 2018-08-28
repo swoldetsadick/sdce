@@ -19,19 +19,40 @@
 ## Project writeup
 
 ### The goals of this project are the following:
+
 * Make a pipeline that finds lane lines on the road
---* Buils a five steps pipeline that detects lane lines in an image (color photo)
+
+--* Build a five steps pipeline that detects lane lines in an image (color photo)
+
+--* Apply the pipeline to a video
+
+--* Improve on the line extrapolation algorithm
+
+--* Apply the new pipeline to a different video
 
 * Reflect on your work in a written report
 
+--* On color detection
+
+--* On region proposal
+
+--* Canny and Hough algorithms
+
+--* On angle and position based outlier elimination
+
+--* On regression
 
 [//]: # (Image References)
-
 [image1]: ./examples/grayscale.jpg "Grayscale"
 
 ---
+---
 
-### Reflection
+## Project
+
+The end result of the project itself can be found at this [link](https://github.com/swoldetsadick/sdce/blob/master/Projects/01_find_lane_lines_on_the_road/CarND_LaneLines_P1/P1.ipynb) in the ipython notebook format, or [here](https://github.com/swoldetsadick/sdce/blob/master/Projects/01_find_lane_lines_on_the_road/CarND_LaneLines_P1/md/P1.md) in .md format.
+
+## Reflection
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
