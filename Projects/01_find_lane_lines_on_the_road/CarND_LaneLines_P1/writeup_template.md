@@ -2,10 +2,19 @@
 
 ## Project writeup
 
-### This project is  
-### use some other method and submit a pdf if you prefer.
+### This project writeup concludes the first three lessons of the first term of the self-driving car nano-degree program from Udacity, focused on fundamental in computer vision.
 
-# factory_bot [![Build Status][ci-image]][ci] [![Code Climate][grade-image]][grade] [![Gem Version][version-image]][version] [![Reviewed by Hound][hound-badge-image]][hound]
+### The lessons revisit fundamental notions of computer vision, and this project make use of Python programming language and Python modules such as scikit learn and OpenCV to propose applications.
+
+### Application is focused on detecting road lane lines via classical computer vision methods.
+
+[![Generic badge](https://img.shields.io/badge/<SUBJECT>-<STATUS>-<COLOR>.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/<SUBJECT>-<STATUS>-<COLOR>.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/<SUBJECT>-<STATUS>-<COLOR>.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/<SUBJECT>-<STATUS>-<COLOR>.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/<SUBJECT>-<STATUS>-<COLOR>.svg)](https://shields.io/)
+python opencv scikitlearn udacity computer vision
+
 ---
 
 **Finding Lane Lines on the Road**
