@@ -157,18 +157,29 @@ not. Let's see a concrete example of this.
 
 ![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/5894d4d5_perceptron-graphics.001/perceptron-graphics.001.jpeg)
 
-When writing equations related to neural networks, the weights will always be represented by some type of the letter w. 
-It will usually look like a WW when it represents a matrix of weights or a **w** when it represents an individual weight, 
+When writing equations related to neural networks, the weights will always be represented by some type of the letter **w**. 
+It will usually look like a _W_ when it represents a **matrix** of weights or a &#969; when it represents an **individual** weight, 
 and it may include some additional information in the form of a subscript to specify which weights (you'll see more on 
-that next). But remember, when you see the letter w, think weights.
+that next). But remember, when you see the letter **w**, think **weights**.
 
 In this example, we'll use w<sub>grades</sub> for the weight of ```grades``` and w<sub>test</sub> for the weight of ```test```.
 
-&Alpha;
+For the image above, let's say that the weights are: 
 
-&#913;
+w<sub>grades</sub> = -1, w<sub>test</sub> = -0.2. You don't have to be concerned with the actual values, but their 
+relative values are important. w<sub>grades</sub> grades is 5 times larger than w<sub>test</sub>, which means the neural 
+network considers ```grades``` input 5 times more important than ```test``` in determining whether a student will be accepted into a 
+university.
 
-\frac{n!}{k!(n-k)!}
+The perceptron applies these weights to the inputs and sums them in a process known as **linear combination**. In our case, 
+this looks like:
+
+w<sub>grades</sub> &#8901; x<sub>grades</sub> + w<sub>test</sub> &#8901; x<sub>test</sub> = -1 &#8901; x<sub>grades</sub> - 0.2 &#8901; x<sub>test</sub> 
+
+Now, to make our equation less wordy, let's replace the explicit names with numbers. Let's use 11 for _grades_ and 22 
+for _tests_. So now our equation becomes:
+
+w<sub>1</sub> &#8901; x<sub>1</sub> + w<sub>2</sub> &#8901; x<sub>2</sub>
 
 ### 14. Why "Neuronal Network" ?
 
