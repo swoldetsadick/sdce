@@ -341,7 +341,7 @@ following AND perceptron to create an OR Perceptron.
 
 ![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/May/5912c232_and-to-or/and-to-or.png)
 
-![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_01.PNG)
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_06.PNG)
 
 ### 16. Perceptrons trick
 
