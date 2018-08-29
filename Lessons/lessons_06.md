@@ -109,7 +109,7 @@ _Corrections:_
 
 ![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/58a49d8a_hq-perceptron/hq-perceptron.png)
 
-**Perceptron**
+###### Perceptron
 
 Now you've seen how a simple neural network makes decisions: by taking in input data, processing that information, and 
 finally, producing an output in the form of a decision! Let's take a deeper dive into the university admission example 
@@ -134,6 +134,40 @@ decision. It's up to the neural network to learn for itself which data is most i
 that data.
 
 It does this with something called **weights**.
+
+###### Weights
+
+When input comes into a perceptron, it gets multiplied by a weight value that is assigned to this particular input. For 
+example, the perceptron above has two inputs, ```tests``` for test scores and ```grades```, so it has two associated weights that 
+can be adjusted individually. These weights start out as random values, and as the neural network network learns more 
+about what kind of input data leads to a student being accepted into a university, the network adjusts the weights based 
+on any errors in categorization that results from the previous weights. This is called *training* the neural network.
+
+A higher weight means the neural network considers that input more important than other inputs, and lower weight means 
+that the data is considered less important. An extreme example would be if test scores had no affect at all on 
+university acceptance; then the weight of the test score input would be zero and it would have no affect on the output 
+of the perceptron.
+
+###### Summing the Input Data
+
+Each input to a perceptron has an associated weight that represents its importance. These weights are determined during 
+the learning process of a neural network, called training. In the next step, the weighted input data are summed to 
+produce a single value, that will help determine the final output - whether a student is accepted to a university or 
+not. Let's see a concrete example of this.
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/5894d4d5_perceptron-graphics.001/perceptron-graphics.001.jpeg)
+
+When writing equations related to neural networks, the weights will always be represented by some type of the letter w. 
+It will usually look like a WW when it represents a matrix of weights or a ww when it represents an individual weight, 
+and it may include some additional information in the form of a subscript to specify which weights (you'll see more on 
+that next). But remember, when you see the letter w, think weights.
+
+In this example, we'll use w_{grades_{}}w 
+grades 
+​	 
+​	  for the weight of grades and w_{test}w 
+test
+​	  for the weight of test.
 
 ### 14. Why "Neuronal Network" ?
 
