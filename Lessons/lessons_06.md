@@ -164,7 +164,9 @@ that next). But remember, when you see the letter w, think weights.
 
 In this example, we'll use w<sub>grades</sub> for the weight of ```grades``` and w<sub>test</sub> for the weight of ```test```.
 
-k_{n+1}
+&Alpha;
+
+	&#913;
 
 \frac{n!}{k!(n-k)!}
 
