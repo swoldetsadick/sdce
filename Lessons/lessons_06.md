@@ -187,31 +187,21 @@ is w<sub>1</sub> and so on. In that case, we would express the linear combinatio
 
 &#8721;<sub>_i_=1</sub><sup>m</sup> &#969;<sub>_i_</sub> &#8901; x<sub>_i_</sub>
 
-Here, the Greek letter Sigma \sum∑ is used to represent summation. It simply means to evaluate the equation to the right multiple times and add up the results. In this case, the equation it will sum is w_i \cdot x_iw 
-i
-​	 ⋅x 
-i
-​	 
+Here, the Greek letter Sigma ∑ is used to represent **summation**. It simply means to evaluate the equation to the right 
+multiple times and add up the results. In this case, the equation it will sum is w<sub>i</sub> &#8901; x<sub>i</sub>	 
 
-But where do we get w_iw 
-i
-​	  and x_ix 
-i
-​	 ?
+But where do we get w<sub>i</sub> and x<sub>i</sub> ?
 
-\sum_{i=1} ^ m ∑ 
-i=1
-m
-​	  means to iterate over all ii values, from 11 to mm.
+∑<sub>_i_=1</sub><sup>m</sup> means to iterate over all ii values, from 11 to mm.
 
-So to put it all together, \sum_{i=1} ^ m w_i \cdot x_i∑ 
-i=1
-m
-​	 w 
-i
-​	 ⋅x 
-i
-​	  means the following:
+So to put it all together, &#8721;<sub>_i_=1</sub><sup>m</sup> &#969;<sub>_i_</sub> &#8901; x<sub>_i_</sub>  means the 
+following:
+
+* Start at _i_ = 1
+* Evaluate &#969;<sub>_1_</sub> &#8901; x<sub>_1_</sub> and remember the results
+* Move to _i_ = 2
+* Evaluate &#969;<sub>_2_</sub> &#8901; x<sub>_2_</sub> and add these results to &#969;<sub>_1_</sub> &#8901; x<sub>_1_</sub>	 
+* Continue repeating that process until _i_ = m, where _m_ is the number of inputs.
 
 ### 14. Why "Neuronal Network" ?
 
