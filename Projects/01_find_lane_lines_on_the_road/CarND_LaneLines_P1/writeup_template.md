@@ -43,13 +43,13 @@
     * On regression
 
 [//]: # (Image References)
-[image1]: ./examples/grayscale.jpg "original"
-[image2]: ./examples/grayscale.jpg "proposed region"
-[image3]: ./examples/grayscale.jpg "color filtering"
-[image4]: ./examples/grayscale.jpg "grayscale"
-[image5]: ./examples/grayscale.jpg "canny"
-[image6]: ./examples/grayscale.jpg "blurred"
-[image7]: ./examples/grayscale.jpg "final"
+[image1]: ./test_images/solidYellowLeft.jpg "original"
+[image2]: ./examples/solidYellowLeft-region.png "proposed region"
+[image3]: ./examples/solidYellowLeft-color.png "color filtering"
+[image4]: ./examples/solidYellowLeft-grayscale.png "grayscale"
+[image5]: ./examples/solidYellowLeft-canny.png "canny"
+[image6]: ./examples/solidYellowLeft-blurred.png "blurred"
+[image7]: ./examples/solidYellowLeft-final.png "final"
 
 ---
 ---
@@ -70,10 +70,12 @@ Immediately after reading in the image itself, we apply a **region selection** a
 in the form of a trapezoid shape, wider at the bottom to capture a maximum width of the image. The length of the 
 trapezoid is selected so it includes the maximum length of lanes, without including far way object and/or the horizon.
 
-![]()
+![alt text][image1]
+
 _Original Image_
 
-![]()
+![alt text][image2]
+
 _Proposed region_
 
 B. Color selection
@@ -84,7 +86,8 @@ to HSV (Hue, Saturation, Value) representation, that is better suited to OpenCV'
 literature. Then two different mask one for yellow and one for white are built, combined and applied to the imput image.
 After this process, only white and yellow elements, of certain HSV values, of the input image are kept.
 
-![]()
+![alt text][image3]
+
 _Color filtering_
 
 C. Grayscale, Canny and Blurring
@@ -96,13 +99,16 @@ observed in lesson 3 give decent results.
 The resulting edges have a lot of noise, and in order to remove and smooth lines, we use a gaussian blurring algorithm
 of kernel size 11.
 
-![]()
+![alt text][image4]
+
 _Grayscaled image_
 
-![]()
+![alt text][image5]
+
 _Canny_
 
-![]()
+![alt text][image6]
+
 _Blurred image_
 
 D. Hough lines
@@ -112,7 +118,8 @@ we apply a Hough transform algorithm to extract lines. Once again, as parameters
 no formal parameter search was performed.
 By the end, lines detected are superposed on the original image as faded red lines.
 
-![]()
+![alt text][image7]
+
 _Final image_
 
 This pipeline is run on the 6 example images, then on a first video.
