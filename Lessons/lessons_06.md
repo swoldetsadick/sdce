@@ -162,12 +162,7 @@ It will usually look like a WW when it represents a matrix of weights or a ww wh
 and it may include some additional information in the form of a subscript to specify which weights (you'll see more on 
 that next). But remember, when you see the letter w, think weights.
 
-In this example, we'll use w_{grades_{}}w 
-grades 
-​	 
-​	  for the weight of grades and w_{test}w 
-test
-​	  for the weight of test.
+In this example, we'll use w<sub>grades</sub> for the weight of ```grades``` and w<sub></sub> test ​for the weight of ```test```.
 
 ### 14. Why "Neuronal Network" ?
 
