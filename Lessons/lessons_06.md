@@ -203,6 +203,13 @@ following:
 * Evaluate &#969;<sub>_2_</sub> &#8901; x<sub>_2_</sub> and add these results to &#969;<sub>_1_</sub> &#8901; x<sub>_1_</sub>	 
 * Continue repeating that process until _i_ = m, where _m_ is the number of inputs.
 
+One last thing: you'll see equations written many different ways, both here and when reading on your own. For example, 
+you will often just see ∑<sub>i</sub> instead of ∑<sub>_i_=1</sub><sup>m</sup>. The first is simply a shorter way of 
+writing the second. That is, if you see a summation without a starting number or a defined end value, it just means 
+perform the sum for all of the them. And sometimes, if the value to iterate over can be inferred, you'll see it as just 
+∑. Just remember they're all the same thing: 
+
+&#8721;<sub>_i_=1</sub><sup>m</sup> &#969;<sub>_i_</sub> &#8901; x<sub>_i_</sub> = &#8721;<sub>_i_</sub> &#969;<sub>_i_</sub> &#8901; x<sub>_i_</sub> = &#8721; &#969;<sub>_i_</sub> &#8901; x<sub>_i_</sub>
 
 ###### Calculating the Output with an Activation Function
 
@@ -235,6 +242,41 @@ Now remember that the step activation function returns 11 for any inputs greater
 in the image, only one point has a y-value greater than or equal to zero – the point right at the origin, (0, 0):
 
 ![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/589d2f7e_example-before-bias/example-before-bias.png)
+
+Now, we certainly want more than one possible grade/test combination to result in acceptance, so we need to adjust the 
+results passed to our activation function so it activates – that is, returns 1 – for more inputs. Specifically, we need 
+to find a way so all the scores we’d like to consider acceptable for admissions produce values greater than or equal to 
+zero when linearly combined with the weights into our node.
+
+One way to get our function to return 11 for more inputs is to add a value to the results of our linear combination, 
+called a **bias**.
+
+A bias, represented in equations as bb, lets us move values in one direction or another.
+
+For example, the following diagram shows the previous hypothetical function with an added bias of +3. The blue shaded 
+area shows all the values that now activate the function. But notice that these are produced with the same inputs as the 
+values shown shaded in grey – just adjusted higher by adding the bias term:
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/589d3055_example-after-bias/example-after-bias.png)
+
+Of course, with neural networks we won't know in advance what values to pick for biases. That’s ok, because just like 
+the weights, the bias can also be updated and changed by the neural network during training. So after adding a bias, we 
+now have a complete perceptron formula:
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/58951180_perceptron-equation-2/perceptron-equation-2.gif)
+
+This formula returns 1 if the input (x<sub>1</sub>, x<sub>2</sub>, ..., x<sub>m</sub>) belongs to the accepted-to-university 
+category or returns 0 if it doesn't. The input is made up of one or more [real numbers](https://en.wikipedia.org/wiki/Real_number), each one represented by 
+x<sub>i</sub>, where _m_ is the number of inputs.
+
+Then the neural network starts to learn! Initially, the weights ( &#969;<sub>i</sub>) and bias (b) are assigned a random 
+value, and then they are updated using a learning algorithm like gradient descent. The weights and biases change so that 
+the next training example is more accurately categorized, and patterns in data are "learned" by the neural network.
+
+Now that you have a good understanding of perceptions, let's put that knowledge to use. In the next section, you'll 
+create the AND perceptron from the _Neural Networks_ video by setting the values for weights and bias.
+
+
 
 
 ### 14. Why "Neuronal Network" ?
