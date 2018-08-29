@@ -192,7 +192,7 @@ multiple times and add up the results. In this case, the equation it will sum is
 
 But where do we get w<sub>i</sub> and x<sub>i</sub> ?
 
-∑<sub>_i_=1</sub><sup>m</sup> means to iterate over all ii values, from 11 to mm.
+∑<sub>_i_=1</sub><sup>m</sup> means to iterate over all _i_ values, from 1 to m.
 
 So to put it all together, &#8721;<sub>_i_=1</sub><sup>m</sup> &#969;<sub>_i_</sub> &#8901; x<sub>_i_</sub>  means the 
 following:
@@ -202,6 +202,40 @@ following:
 * Move to _i_ = 2
 * Evaluate &#969;<sub>_2_</sub> &#8901; x<sub>_2_</sub> and add these results to &#969;<sub>_1_</sub> &#8901; x<sub>_1_</sub>	 
 * Continue repeating that process until _i_ = m, where _m_ is the number of inputs.
+
+
+###### Calculating the Output with an Activation Function
+
+Finally, the result of the perceptron's summation is turned into an output signal! This is done by feeding the linear 
+combination into an **activation function**.
+
+Activation functions are functions that decide, given the inputs into the node, what should be the node's output? 
+Because it's the activation function that decides the actual output, we often refer to the outputs of a layer as its 
+"activations".
+
+One of the simplest activation functions is the **Heaviside step function**. This function returns a **0** if the linear 
+combination is less than 0. It returns a **1** if the linear combination is positive or equal to zero. The [Heaviside 
+step function](https://en.wikipedia.org/wiki/Heaviside_step_function) is shown below, where h is the calculated linear combination:
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/589cf7dd_heaviside-step-graph-2/heaviside-step-graph-2.png)
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/5895102f_heaviside-step-function-2/heaviside-step-function-2.gif)
+
+In the university acceptance example above, we used the weights w<sub>grades</sub> = -1, w<sub>test</sub> = -0.2w. Since 
+w<sub>grades</sub> and w<sub>test</sub> are negative values, the activation function will only return a 1 if grades and 
+test are 0! This is because the range of values from the linear combination using these weights and inputs are \(−∞,0] 
+(i.e. negative infinity to 0, including 0 itself).
+
+It's easiest to see this with an example in two dimensions. In the following graph, imagine any points along the line or 
+in the shaded area represent all the possible inputs to our node. Also imagine that the value along the y-axis is the 
+result of performing the linear combination on these inputs and the appropriate weights. It's this result that gets 
+passed to the activation function.
+
+Now remember that the step activation function returns 11 for any inputs greater than or equal to zero. As you can see 
+in the image, only one point has a y-value greater than or equal to zero – the point right at the origin, (0, 0):
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/589d2f7e_example-before-bias/example-before-bias.png)
+
 
 ### 14. Why "Neuronal Network" ?
 
