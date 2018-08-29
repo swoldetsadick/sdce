@@ -276,16 +276,72 @@ the next training example is more accurately categorized, and patterns in data a
 Now that you have a good understanding of perceptions, let's put that knowledge to use. In the next section, you'll 
 create the AND perceptron from the _Neural Networks_ video by setting the values for weights and bias.
 
-
-
-
 ### 14. Why "Neuronal Network" ?
 
-[![why nn](http://img.youtube.com/vi//0.jpg)]( "why nn")
+[![why nn](http://img.youtube.com/vi/zAkzOZntK6Y/0.jpg)](https://youtu.be/zAkzOZntK6Y "why nn")
 
 ### 15. Perceptrons as logical operators
 
-[![perceptrons as l o](http://img.youtube.com/vi//0.jpg)]( "perceptrons as l o")
+###### Perceptrons as Logical Operators
+
+In this lesson, we'll see one of the many great applications of perceptrons. As logical operators! You'll have the 
+chance to create the perceptrons for the most common of these, the **AND**, **OR**, and **NOT** operators. And then, 
+we'll see what to do about the elusive **XOR** operator. Let's dive in!
+
+###### AND Perceptron
+
+[![perceptrons as l o](http://img.youtube.com/vi/45K5N0P9wJk/0.jpg)](https://youtu.be/45K5N0P9wJk "perceptrons as l o")
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/May/5912bf0e_and-quiz/and-quiz.png)
+
+###### What are the weights and bias for the AND perceptron?
+
+Set the weights (```weight1```, ```weight2```) and bias ```bias``` to the correct values that calculate AND operation as 
+shown above.
+
+````python
+import pandas as pd
+
+# TODO: Set weight1, weight2, and bias
+weight1 = 0.0
+weight2 = 0.0
+bias = 0.0
+
+
+# DON'T CHANGE ANYTHING BELOW
+# Inputs and outputs
+test_inputs = [(0, 0), (0, 1), (1, 0), (1, 1)]
+correct_outputs = [False, False, False, True]
+outputs = []
+
+# Generate and check output
+for test_input, correct_output in zip(test_inputs, correct_outputs):
+    linear_combination = weight1 * test_input[0] + weight2 * test_input[1] + bias
+    output = int(linear_combination >= 0)
+    is_correct_string = 'Yes' if output == correct_output else 'No'
+    outputs.append([test_input[0], test_input[1], linear_combination, output, is_correct_string])
+
+# Print output
+num_wrong = len([output[4] for output in outputs if output[4] == 'No'])
+output_frame = pd.DataFrame(outputs, columns=['Input 1', '  Input 2', '  Linear Combination', '  Activation Output', '  Is Correct'])
+if not num_wrong:
+    print('Nice!  You got it all correct.\n')
+else:
+    print('You got {} wrong.  Keep trying!\n'.format(num_wrong))
+print(output_frame.to_string(index=False))
+````
+
+###### OR Perceptron
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/May/5912c102_or-quiz/or-quiz.png)
+
+The OR perceptron is very similar to an AND perceptron. In the image below, the OR perceptron has the same line as the 
+AND perceptron, except the line is shifted down. What can you do to the weights and/or bias to achieve this? Use the 
+following AND perceptron to create an OR Perceptron.
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/May/5912c232_and-to-or/and-to-or.png)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_01.PNG)
 
 ### 16. Perceptrons trick
 
