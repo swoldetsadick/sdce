@@ -158,11 +158,15 @@ not. Let's see a concrete example of this.
 ![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/5894d4d5_perceptron-graphics.001/perceptron-graphics.001.jpeg)
 
 When writing equations related to neural networks, the weights will always be represented by some type of the letter w. 
-It will usually look like a WW when it represents a matrix of weights or a ww when it represents an individual weight, 
+It will usually look like a WW when it represents a matrix of weights or a **w** when it represents an individual weight, 
 and it may include some additional information in the form of a subscript to specify which weights (you'll see more on 
 that next). But remember, when you see the letter w, think weights.
 
-In this example, we'll use w<sub>grades</sub> for the weight of ```grades``` and w<sub>test</sub>for the weight of ```test```.
+In this example, we'll use w<sub>grades</sub> for the weight of ```grades``` and w<sub>test</sub> for the weight of ```test```.
+
+k_{n+1}
+
+\frac{n!}{k!(n-k)!}
 
 ### 14. Why "Neuronal Network" ?
 
