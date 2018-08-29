@@ -166,7 +166,7 @@ In this example, we'll use w<sub>grades</sub> for the weight of ```grades``` and
 
 &Alpha;
 
-	&#913;
+&#913;
 
 \frac{n!}{k!(n-k)!}
 
