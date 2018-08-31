@@ -432,6 +432,11 @@ particular point.
 
 ![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_11.PNG)
 
+(3 + 0.1 &#8901; &#946;) + (4 + 0.1 &#8901; &#946;) + (-10 + 0.1 &#8901; &#946;) = 0
+&#8660; -3 + 0.3 &#8901; &#946; = 0
+&#8660; 0.3 &#8901; &#946; = 3
+&#8660; &#946; = 10
+
 ### 17. Perceptrons algorithms
 
 [![perceptrons algorithm](http://img.youtube.com/vi//0.jpg)]( "perceptrons algorithm")
