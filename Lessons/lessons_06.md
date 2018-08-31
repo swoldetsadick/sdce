@@ -668,3 +668,125 @@ us in doing that.
 
 ![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_15.PNG)
 
+### 22. Softmax
+
+###### Multi-Class Classification and Softmax
+
+[![softmax 1](http://img.youtube.com/vi/NNoezNnAMTY/0.jpg)](https://youtu.be/NNoezNnAMTY "softmax 1")
+
+###### The Softmax Function
+
+In the next video, we'll learn about the softmax function, which is the equivalent of the sigmoid activation function, 
+but when the problem has 3 or more classes.
+
+[![softmax 2](http://img.youtube.com/vi/RC_A9Tu99y4/0.jpg)](https://youtu.be/RC_A9Tu99y4 "softmax 2")
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_16.PNG)
+
+[![softmax 3](http://img.youtube.com/vi/n8S-v_LCTms/0.jpg)](https://youtu.be/n8S-v_LCTms "softmax 3")
+
+###### Quiz: Coding Softmax
+
+And now, your time to shine! Let's code the formula for the Softmax function in Python.
+
+_softmax.py_
+````python
+import numpy as np
+
+# Write a function that takes as input a list of numbers, and returns
+# the list of values given by the softmax function.
+def softmax(L):
+    pass
+````
+
+_softmax.py_
+````python
+import numpy as np
+
+def softmax(L):
+    expL = np.exp(L)
+    sumExpL = sum(expL)
+    result = []
+    for i in expL:
+        result.append(i*1.0/sumExpL)
+    return result
+    
+    # Note: The function np.divide can also be used here, as follows:
+    # def softmax(L):
+    #     expL = np.exp(L)
+    #     return np.divide (expL, expL.sum())
+````
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_17.PNG)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_18.PNG)
+
+### 23. One-hot encoding
+
+[![One-hot encoding](http://img.youtube.com/vi/AePvjhyvsBo/0.jpg)](https://youtu.be/AePvjhyvsBo "One-hot encoding")
+
+### 24. Maximum likelihood
+
+Probability will be one of our best friends as we go through Deep Learning. In this lesson, we'll see how we can use 
+probability to evaluate (and improve!) our models.
+
+[![Maximum likelihood 1](http://img.youtube.com/vi/1yJx-QtlvNI/0.jpg)](https://youtu.be/1yJx-QtlvNI "Maximum likelihood 1")
+
+[![Maximum likelihood 2](http://img.youtube.com/vi/6nUUeQ9AeUA/0.jpg)](https://youtu.be/6nUUeQ9AeUA "Maximum likelihood 2")
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_19.PNG)
+
+The next video will show a more formal treatment of Maximum Likelihood.
+
+### 25. Maximizing probabilities
+
+In this lesson and quiz, we will learn how to maximize a probability, using some math. Nothing more than high school 
+math, so get ready for a trip down memory lane!
+
+[![Maximizing probabilities 1](http://img.youtube.com/vi/6nUUeQ9AeUA/0.jpg)](https://youtu.be/-xxrisIvD0E "Maximizing probabilities 1")
+
+[![Maximizing probabilities 2](http://img.youtube.com/vi/6nUUeQ9AeUA/0.jpg)](https://youtu.be/njq6bYrPqSU "Maximizing probabilities 2")
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_20.PNG)
+
+### 26. Cross-entropy 1
+
+https://youtu.be/iREoPUrpXvE
+
+### 27. Cross-entropy 2
+
+So we're getting somewhere, there's definitely a connection between probabilities and error functions, and it's called 
+Cross-Entropy. This concept is tremendously popular in many fields, including Machine Learning. Let's dive more into the 
+formula, and actually code it!
+
+https://youtu.be/qvr_ego_d6w
+
+https://youtu.be/1BnhC6e0TFw
+
+###### Quiz: Coding Cross-entropy
+
+Now, time to shine! Let's code the formula for cross-entropy in Python.
+
+_cross-entropy.py_
+````python
+import numpy as np
+
+# Write a function that takes as input two lists Y, P,
+# and returns the float corresponding to their cross-entropy.
+def cross_entropy(Y, P):
+    pass
+````
+
+_solution.py_
+````python
+import numpy as np
+
+def cross_entropy(Y, P):
+    Y = np.float_(Y)
+    P = np.float_(P)
+    return -np.sum(Y * np.log(P) + (1 - Y) * np.log(1 - P))
+````
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_21.PNG)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_22.PNG)
