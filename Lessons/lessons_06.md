@@ -751,7 +751,7 @@ math, so get ready for a trip down memory lane!
 
 ### 26. Cross-entropy 1
 
-https://youtu.be/iREoPUrpXvE
+[![Cross-entropy 1](http://img.youtube.com/vi/iREoPUrpXvE/0.jpg)](https://youtu.be/iREoPUrpXvE "Cross-entropy 1")
 
 ### 27. Cross-entropy 2
 
@@ -759,9 +759,9 @@ So we're getting somewhere, there's definitely a connection between probabilitie
 Cross-Entropy. This concept is tremendously popular in many fields, including Machine Learning. Let's dive more into the 
 formula, and actually code it!
 
-https://youtu.be/qvr_ego_d6w
+[![Cross-entropy 2](http://img.youtube.com/vi/qvr_ego_d6w/0.jpg)](https://youtu.be/qvr_ego_d6w "Cross-entropy 2")
 
-https://youtu.be/1BnhC6e0TFw
+[![Cross-entropy 2](http://img.youtube.com/vi/1BnhC6e0TFw/0.jpg)](https://youtu.be/1BnhC6e0TFw "Cross-entropy 2")
 
 ###### Quiz: Coding Cross-entropy
 
