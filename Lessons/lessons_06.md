@@ -358,7 +358,7 @@ import pandas as pd
 
 # TODO: Set weight1, weight2, and bias
 weight1 = 0.0
-weight2 = 0.0
+weight2 = -1.0
 bias = 0.0
 
 
