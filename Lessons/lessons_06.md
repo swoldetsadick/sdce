@@ -636,6 +636,7 @@ def perceptronStep(X, y, W, b, learn_rate = 0.01):
             b -= learn_rate
     return W, b
 ````
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_13.PNG)
 
 ![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_12.PNG)
 
@@ -645,7 +646,7 @@ def perceptronStep(X, y, W, b, learn_rate = 0.01):
 
 ### 19. Error functions
 
-[![err func](http://img.youtube.com/vi//0.jpg)]( "err func")
+[![err func](http://img.youtube.com/vi/YfUUunxWIJw/0.jpg)](https://youtu.be/YfUUunxWIJw "err func")
 
 ### 20. Log-loss error function
 
