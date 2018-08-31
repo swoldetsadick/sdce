@@ -484,7 +484,18 @@ def prediction(X, W, b):
 # update the weights and bias W, b, according to the perceptron algorithm,
 # and return W and b.
 def perceptronStep(X, y, W, b, learn_rate = 0.01):
-    # Fill in code
+    for i in range(len(X)):
+        pnt = X[i]
+        label = y[i]
+        pred = prediction(pnt, W, b)
+        if label == 1 and pred == 0:
+            W[0] += pnt[0]*learn_rate
+            W[1] += pnt[1]*learn_rate
+            b += learn_rate
+        elif label == 0 and pred == 1:
+            W[0] -= pnt[0]*learn_rate
+            W[1] -= pnt[1]*learn_rate
+            b -= learn_rate
     return W, b
     
 # This function runs the perceptron algorithm repeatedly on the dataset,
