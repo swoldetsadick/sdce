@@ -439,7 +439,30 @@ particular point.
 
 ### 17. Perceptrons algorithms
 
-[![perceptrons algorithm](http://img.youtube.com/vi//0.jpg)]( "perceptrons algorithm")
+And now, with the perceptron trick in our hands, we can fully develop the perceptron algorithm! The following video will 
+show you the pseudocode, and in the quiz below, you'll have the chance to code it in Python.
+
+[![perceptrons algorithm](http://img.youtube.com/vi/p8Q3yu9YqYk/0.jpg)](https://youtu.be/p8Q3yu9YqYk "perceptrons algorithm")
+
+###### Coding the Perceptron Algorithm
+
+Time to code! In this quiz, you'll have the chance to implement the perceptron algorithm to separate the following data 
+(given in the file data.csv).
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/May/590d06dd_points/points.png)
+
+Recall that the perceptron step works as follows. For a point with coordinates (p,q), label y&#770;, and prediction 
+given by the equation y&#770; = step(&#969;<sub>1</sub> &#8901; x<sub>1</sub> + &#969;<sub>2</sub> &#8901; x<sub>2</sub> + b) 
+
+* If the point is correctly classified, do nothing.
+* If the point is classified positive, but it has a negative label, subtract &#945;p, &#945;q and &#945;, from &#969;<sub>1</sub>, &#969;<sub>2</sub>, and b respectively.
+* If the point is classified negative, but it has a positive label, add &#945;p, &#945;q and &#945;, from &#969;<sub>1</sub>, &#969;<sub>2</sub>, and b respectively.
+
+Then click on ```test run``` to graph the solution that the perceptron algorithm gives you. It'll actually draw a set of 
+dotted lines, that show how the algorithm approaches to the best solution, given by the black solid line.
+
+Feel free to play with the parameters of the algorithm (number of epochs, learning rate, and even the randomizing of the 
+initial parameters) to see how your initial conditions can affect the solution!
 
 ### 18. Non-linear regions
 
