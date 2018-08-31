@@ -650,8 +650,21 @@ def perceptronStep(X, y, W, b, learn_rate = 0.01):
 
 ### 20. Log-loss error function
 
-[![log loss err func](http://img.youtube.com/vi//0.jpg)]( "log loss err func")
+[![log loss err func](http://img.youtube.com/vi/jfKShxGAbok/0.jpg)](https://youtu.be/jfKShxGAbok "log loss err func")
 
-### 21. Discrete vs Continuous
+We pick back up on log-loss error with the gradient descent concept.
 
-[![D vs C](http://img.youtube.com/vi//0.jpg)]( "D vs C")
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_14.PNG)
+
+### 21. Discrete vs Continuous Predictions
+ 
+In the last few videos, we learned that continuous error functions are better than discrete error functions, when it 
+comes to optimizing. For this, we need to switch from discrete to continuous predictions. The next two videos will guide 
+us in doing that.
+
+[![D vs C](http://img.youtube.com/vi/rdP-RPDFkl0/0.jpg)](https://youtu.be/rdP-RPDFkl0 "D vs C")
+
+[![D vs C](http://img.youtube.com/vi/Rm2KxFaPiJg/0.jpg)](https://youtu.be/Rm2KxFaPiJg "D vs C")
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_15.PNG)
+
