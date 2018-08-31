@@ -410,7 +410,27 @@ perceptrons to calculate XOR.
 
 ### 16. Perceptrons trick
 
-[![perceptrons trick](http://img.youtube.com/vi//0.jpg)]( "perceptrons trick")
+In the last section you used your logic and your mathematical knowledge to create perceptrons for some of the most 
+common logical operators. In real life, though, we can't be building these perceptrons ourselves. The idea is that we 
+give them the result, and they build themselves. For this, here's a pretty neat trick that will help us.
+
+[![perceptrons trick](http://img.youtube.com/vi/-zhTROHtscQ/0.jpg)](https://youtu.be/-zhTROHtscQ "perceptrons trick")
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/May/5912022e_perceptronquiz/perceptronquiz.png)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_10.PNG)
+
+[![perceptrons trick 2](http://img.youtube.com/vi/fATmrG2hQzI/0.jpg)](https://youtu.be/fATmrG2hQzI "perceptrons trick 2")
+
+###### Time for some math!
+
+Now that we've learned that the points that are misclassified, want the line to move closer to them, let's do some math. 
+The following video shows a mathematical trick that modifies the equation of the line, so that it comes closer to a 
+particular point.
+
+[![perceptrons trick 3](http://img.youtube.com/vi/lif_qPmXvWA/0.jpg)](https://youtu.be/lif_qPmXvWA "perceptrons trick 3")
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_11.PNG)
 
 ### 17. Perceptrons algorithms
 
