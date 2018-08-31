@@ -303,9 +303,9 @@ shown above.
 import pandas as pd
 
 # TODO: Set weight1, weight2, and bias
-weight1 = 0.0
-weight2 = 0.0
-bias = 0.0
+weight1 = 1.0
+weight2 = 1.0
+bias = -2.0
 
 
 # DON'T CHANGE ANYTHING BELOW
@@ -331,6 +331,8 @@ else:
 print(output_frame.to_string(index=False))
 ````
 
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_06.PNG)
+
 ###### OR Perceptron
 
 ![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/May/5912c102_or-quiz/or-quiz.png)
@@ -341,7 +343,70 @@ following AND perceptron to create an OR Perceptron.
 
 ![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/May/5912c232_and-to-or/and-to-or.png)
 
-![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_06.PNG)
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_07.PNG)
+
+###### NOT Perceptron
+
+Unlike the other perceptrons we looked at, the NOT operation only cares about one input. The operation returns a ```0```
+if the input is ```1``` and a ```1``` if it's a ```0```. The other inputs to the perceptron are ignored.
+
+In this quiz, you'll set the weights (```weight1```, ```weight2```) and bias ```bias``` to the values that calculate the 
+NOT operation on the second input and ignores the first input.
+
+````python
+import pandas as pd
+
+# TODO: Set weight1, weight2, and bias
+weight1 = 0.0
+weight2 = 0.0
+bias = 0.0
+
+
+# DON'T CHANGE ANYTHING BELOW
+# Inputs and outputs
+test_inputs = [(0, 0), (0, 1), (1, 0), (1, 1)]
+correct_outputs = [True, False, True, False]
+outputs = []
+
+# Generate and check output
+for test_input, correct_output in zip(test_inputs, correct_outputs):
+    linear_combination = weight1 * test_input[0] + weight2 * test_input[1] + bias
+    output = int(linear_combination >= 0)
+    is_correct_string = 'Yes' if output == correct_output else 'No'
+    outputs.append([test_input[0], test_input[1], linear_combination, output, is_correct_string])
+
+# Print output
+num_wrong = len([output[4] for output in outputs if output[4] == 'No'])
+output_frame = pd.DataFrame(outputs, columns=['Input 1', '  Input 2', '  Linear Combination', '  Activation Output', '  Is Correct'])
+if not num_wrong:
+    print('Nice!  You got it all correct.\n')
+else:
+    print('You got {} wrong.  Keep trying!\n'.format(num_wrong))
+print(output_frame.to_string(index=False))
+````
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_08.PNG)
+
+[![XOR](http://img.youtube.com/vi/TF83GfjYLdw/0.jpg)](https://youtu.be/TF83GfjYLdw "XOR")
+
+###### XOR Perceptron
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/May/5912c2f1_xor/xor.png)
+
+###### Quiz: Build an XOR Multi-Layer Perceptron
+
+Now, let's build a multi-layer perceptron from the AND, NOT, and OR perceptrons to create XOR logic!
+
+The neural network below contains 3 perceptrons, A, B, and C. The last one (AND) has been given for you. The input to 
+the neural network is from the first node. The output comes out of the last node.
+
+The multi-layer perceptron below calculates XOR. Each perceptron is a logic operation of AND, OR, and NOT. However, the 
+perceptrons A, B, and C don't indicate their operation. In the following quiz, set the correct operations for the 
+perceptrons to calculate XOR.
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/May/59112a6b_xor-quiz/xor-quiz.png)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_09.PNG)
 
 ### 16. Perceptrons trick
 
