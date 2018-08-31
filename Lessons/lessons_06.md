@@ -641,7 +641,7 @@ def perceptronStep(X, y, W, b, learn_rate = 0.01):
 
 ### 18. Non-linear regions
 
-[![NL regions](http://img.youtube.com/vi//0.jpg)]( "NL regions")
+[![NL regions](http://img.youtube.com/vi/B8UrWnHh1Wc/0.jpg)](https://youtu.be/B8UrWnHh1Wc "NL regions")
 
 ### 19. Error functions
 
