@@ -799,7 +799,26 @@ def cross_entropy(Y, P):
 
 ### 29. Logistic regression
 
-[![Logistic regression](http://img.youtube.com/vi//0.jpg)]( "Logistic regression")
+Now, we're finally ready for one of the most popular and useful algorithms in Machine Learning, and the building block 
+of all that constitutes Deep Learning. The **Logistic Regression Algorithm**. And it basically goes like this:
+
+* Take your data
+* Pick a random model
+* Calculate the error
+* Minimize the error, and obtain a better model
+* Enjoy!
+
+###### Calculating the Error Function
+
+Let's dive into the details. The next video will show you how to calculate an error function.
+
+[![Logistic regression 1](http://img.youtube.com/vi/V5kkHldUlVU/0.jpg)](https://youtu.be/V5kkHldUlVU "Logistic regression 1")
+
+###### Minimizing the error function
+
+And this video will show us how to minimize the error function.
+
+[![Logistic regression 2](http://img.youtube.com/vi/KayqiYijlzc/0.jpg)](https://youtu.be/KayqiYijlzc "Logistic regression 2")
 
 ### 30. Gradient descent
 
