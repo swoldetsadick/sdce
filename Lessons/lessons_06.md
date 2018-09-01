@@ -822,4 +822,32 @@ And this video will show us how to minimize the error function.
 
 ### 30. Gradient descent
 
-[![Gradient descent](http://img.youtube.com/vi//0.jpg)]( "Gradient descent")
+In this lesson, we'll learn the principles and the math behind the gradient descent algorithm.
+
+[![Gradient descent](http://img.youtube.com/vi/rhVIF-nigrY/0.jpg)](https://youtu.be/rhVIF-nigrY "Gradient descent")
+
+###### Gradient Calculation
+
+In the last few videos, we learned that in order to minimize the error function, we need to take some derivatives. So 
+let's get our hands dirty and actually compute the derivative of the error function. The first thing to notice is that 
+the sigmoid function has a really nice derivative. Namely,
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_23.PNG)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_24.PNG)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_25.PNG)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_26.PNG)
+
+So, a small gradient means we'll change our coordinates by a little bit, and a large gradient means we'll change our 
+coordinates by a lot.
+
+If this sounds anything like the perceptron algorithm, this is no coincidence! We'll see it in a bit.
+
+###### Gradient Descent Step
+
+Therefore, since the gradient descent step simply consists in subtracting a multiple of the gradient of the error 
+function at every point, then this updates the weights in the following way:
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_27.PNG)
