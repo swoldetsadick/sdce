@@ -797,6 +797,10 @@ def cross_entropy(Y, P):
 
 &#8721;<sup>n</sup><sub>i=1</sub> &#8721;<sup>m</sup><sub>j=1</sub> y<sub>ij</sub> &#8901; ln(p<sub>ij</sub>)
 
+For 2 class:
+
+&#8721;<sup>n</sup><sub>i=1</sub> y<sub>i1</sub> &#8901; ln(p<sub>i1</sub>) +  y<sub>i2</sub> &#8901; ln(p<sub>i2</sub>)
+
 ![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_22.PNG)
 
 ### 29. Logistic regression
