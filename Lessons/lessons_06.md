@@ -685,6 +685,8 @@ but when the problem has 3 or more classes.
 
 [![softmax 3](http://img.youtube.com/vi/n8S-v_LCTms/0.jpg)](https://youtu.be/n8S-v_LCTms "softmax 3")
 
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_17.PNG)
+
 ###### Quiz: Coding Softmax
 
 And now, your time to shine! Let's code the formula for the Softmax function in Python.
@@ -717,9 +719,9 @@ def softmax(L):
     #     return np.divide (expL, expL.sum())
 ````
 
-![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_17.PNG)
-
 ![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_18.PNG)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_19.PNG)
 
 ### 23. One-hot encoding
 
@@ -734,7 +736,7 @@ probability to evaluate (and improve!) our models.
 
 [![Maximum likelihood 2](http://img.youtube.com/vi/6nUUeQ9AeUA/0.jpg)](https://youtu.be/6nUUeQ9AeUA "Maximum likelihood 2")
 
-![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_19.PNG)
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_20.PNG)
 
 The next video will show a more formal treatment of Maximum Likelihood.
 
