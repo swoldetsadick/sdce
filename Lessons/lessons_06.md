@@ -756,7 +756,7 @@ math, so get ready for a trip down memory lane!
 ### 27. Cross-entropy 2
 
 So we're getting somewhere, there's definitely a connection between probabilities and error functions, and it's called 
-Cross-Entropy. This concept is tremendously popular in many fields, including Machine Learning. Let's dive more into the 
+**Cross-Entropy**. This concept is tremendously popular in many fields, including Machine Learning. Let's dive more into the 
 formula, and actually code it!
 
 [![Cross-entropy 2](http://img.youtube.com/vi/qvr_ego_d6w/0.jpg)](https://youtu.be/qvr_ego_d6w "Cross-entropy 2")
@@ -774,7 +774,9 @@ import numpy as np
 # Write a function that takes as input two lists Y, P,
 # and returns the float corresponding to their cross-entropy.
 def cross_entropy(Y, P):
-    pass
+    part_1 = np.multiply(Y, np.log(P))
+    part_2 = np.multiply(np.repeat(1, len(Y)) - Y, np.log((np.repeat(1, len(P)) - P)))
+    return -sum(part_1 + part_2)
 ````
 
 _solution.py_
@@ -789,4 +791,14 @@ def cross_entropy(Y, P):
 
 ![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_21.PNG)
 
-![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_22.PNG)
+### 28. Multi-class cross-entropy
+
+[![Multi-class cross-entropy](http://img.youtube.com/vi//0.jpg)]( "Multi-class cross-entropy")
+
+### 29. Logistic regression
+
+[![Logistic regression](http://img.youtube.com/vi//0.jpg)]( "Logistic regression")
+
+### 30. Gradient descent
+
+[![Gradient descent](http://img.youtube.com/vi//0.jpg)]( "Gradient descent")
