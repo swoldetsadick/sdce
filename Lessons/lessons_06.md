@@ -799,7 +799,13 @@ def cross_entropy(Y, P):
 
 For 2 class:
 
-&#8721;<sup>n</sup><sub>i=1</sub> y<sub>i1</sub> &#8901; ln(p<sub>i1</sub>) +  y<sub>i2</sub> &#8901; ln(p<sub>i2</sub>)
+&#8721;<sup>n</sup><sub>i=1</sub> (y<sub>i1</sub> &#8901; ln(p<sub>i1</sub>) +  y<sub>i2</sub> &#8901; ln(p<sub>i2</sub>))
+
+&#8721;<sup>n</sup><sub>i=1</sub> (y<sub>i1</sub> &#8901; ln(p<sub>i1</sub>) +  (1 - y<sub>i1</sub>) &#8901; ln(1 - p<sub>i1</sub>))
+
+because y<sub>i2</sub> = 1 - y<sub>i1</sub> and p<sub>i2</sub> = 1 - p<sub>i1</sub>, if p<sub>i1</sub> = p<sub>i</sub> and y<sub>i1</sub> = y<sub>i</sub>
+
+&#8721;<sup>n</sup><sub>i=1</sub> (y<sub>i</sub> &#8901; ln(p<sub>i</sub>) + (1 - y<sub>i</sub>) &#8901; ln(1 - p<sub>i</sub>))
 
 ![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_22.PNG)
 
