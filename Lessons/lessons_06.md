@@ -698,7 +698,7 @@ import numpy as np
 # Write a function that takes as input a list of numbers, and returns
 # the list of values given by the softmax function.
 def softmax(L):
-    pass
+    return np.exp(L)/np.sum(np.exp(L))
 ````
 
 _softmax.py_
@@ -721,8 +721,6 @@ def softmax(L):
 
 ![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_18.PNG)
 
-![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_19.PNG)
-
 ### 23. One-hot encoding
 
 [![One-hot encoding](http://img.youtube.com/vi/AePvjhyvsBo/0.jpg)](https://youtu.be/AePvjhyvsBo "One-hot encoding")
@@ -736,7 +734,7 @@ probability to evaluate (and improve!) our models.
 
 [![Maximum likelihood 2](http://img.youtube.com/vi/6nUUeQ9AeUA/0.jpg)](https://youtu.be/6nUUeQ9AeUA "Maximum likelihood 2")
 
-![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_20.PNG)
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_19.PNG)
 
 The next video will show a more formal treatment of Maximum Likelihood.
 
