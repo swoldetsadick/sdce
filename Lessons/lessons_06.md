@@ -795,6 +795,8 @@ def cross_entropy(Y, P):
 
 [![Multi-class cross-entropy](http://img.youtube.com/vi/keDswcqkees/0.jpg)](https://youtu.be/keDswcqkees "Multi-class cross-entropy")
 
+&#8721;<sup>n</sup><sub>i=1</sub> &#8721;<sup>m</sup><sub>j=1</sub> y<sub>ij</sub> &#8901; ln(p<sub>ij</sub>)
+
 ![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_22.PNG)
 
 ### 29. Logistic regression
