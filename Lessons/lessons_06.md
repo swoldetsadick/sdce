@@ -989,12 +989,20 @@ print('Change in Weights:')
 print(del_w)
 ````
 
-### 32. Perceptron VS Gradient descent
+### 32. Perceptron vs Gradient descent
+
+[![Perceptron vs Gradient descent](http://img.youtube.com/vi/uL5LuRPivTA/0.jpg)](https://youtu.be/uL5LuRPivTA "Perceptron vs Gradient descent")
 
 ### 33. Continuous perceptrons
 
+[![Continuous perceptrons](http://img.youtube.com/vi/07-JJ-aGEfM/0.jpg)](https://youtu.be/07-JJ-aGEfM "Continuous perceptrons")
+
 ### 34. Non-linear data
 
+[![Non-linear data](http://img.youtube.com/vi/F7ZiE8PQiSc/0.jpg)](https://youtu.be/F7ZiE8PQiSc "Non-linear data")
+
 ### 35. Non-linear Models
+
+[![Non-linear Models](http://img.youtube.com/vi/HWuBKCZsCo8/0.jpg)](https://youtu.be/HWuBKCZsCo8 "Non-linear Models")
 
 ### 36. Neuronal network architecture
