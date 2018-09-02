@@ -938,13 +938,14 @@ w = np.array([0.5, -0.5])
 
 # Calculate one gradient descent step for each weight
 # TODO: Calculate output of neural network
-nn_output = None
+nn_output = sigmoid(x[0] * w[0] + x[1] * w[1])
 
 # TODO: Calculate error of neural network
-error = None
+error = y - nn_output
 
 # TODO: Calculate change in weights
-del_w = None
+del_w = [learnrate * error * sigmoid(np.dot(x,w)) * (1 - sigmoid(np.dot(x,w))) * x[0],
+learnrate * error * sigmoid(np.dot(x,w)) * (1 - sigmoid(np.dot(x,w))) * x[1]]
 
 print('Neural Network output:')
 print(nn_output)
@@ -988,6 +989,7 @@ print(error)
 print('Change in Weights:')
 print(del_w)
 ````
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_28.PNG)
 
 ### 32. Perceptron vs Gradient descent
 
