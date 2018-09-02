@@ -866,6 +866,129 @@ function at every point, then this updates the weights in the following way:
 
 ### 31. Gradient descent: The code
 
+From before we saw that one weight update can be calculated as:
+
+Δ&#969;<sub>i</sub> = α ∗ δ ∗ x<sub>i</sub>
+​	 
+where α is the learning rate and δ is the error term.
+
+Previously, we utilized the loss function for logistic regression, which was because we were performing a binary 
+classification task. This time we'll try to get the function to learn a value instead of a class. Therefore, we'll use a 
+simpler loss function, as defined below in the error term δ.
+
+δ = (y -  y&#770;) f'(h) = (y -  y&#770;) f'(&#8721; &#969;<sub>i</sub> x<sub>i</sub>)
+
+Note that _f'(h)_ is the derivative of the activation function _f(h)_, and _h_ is defined as the output, which in the 
+case of a neural network is a sum of the weights times the inputs.
+
+Now I'll write this out in code for the case of only one output unit. We'll also be using the sigmoid as the activation 
+function _f(h)_.
+
+````python
+# Defining the sigmoid function for activations
+def sigmoid(x):
+    return 1/(1+np.exp(-x))
+
+# Derivative of the sigmoid function
+def sigmoid_prime(x):
+    return sigmoid(x) * (1 - sigmoid(x))
+
+# Input data
+x = np.array([0.1, 0.3])
+# Target
+y = 0.2
+# Input to output weights
+weights = np.array([-0.8, 0.5])
+
+# The learning rate, eta in the weight step equation
+learnrate = 0.5
+
+# The neural network output (y-hat)
+nn_output = sigmoid(x[0]*weights[0] + x[1]*weights[1])
+# or nn_output = sigmoid(np.dot(x, weights))
+
+# output error (y - y-hat)
+error = y - nn_output
+
+# error term (lowercase delta)
+error_term = error * sigmoid_prime(np.dot(x,weights))
+
+# Gradient descent step 
+del_w = [ learnrate * error_term * x[0],
+                 learnrate * error_term * x[1]]
+# or del_w = learnrate * error_term * x
+````
+
+_gradient.py_
+````python
+import numpy as np
+
+def sigmoid(x):
+    """
+    Calculate sigmoid
+    """
+    return 1/(1+np.exp(-x))
+
+learnrate = 0.5
+x = np.array([1, 2])
+y = np.array(0.5)
+
+# Initial weights
+w = np.array([0.5, -0.5])
+
+# Calculate one gradient descent step for each weight
+# TODO: Calculate output of neural network
+nn_output = None
+
+# TODO: Calculate error of neural network
+error = None
+
+# TODO: Calculate change in weights
+del_w = None
+
+print('Neural Network output:')
+print(nn_output)
+print('Amount of Error:')
+print(error)
+print('Change in Weights:')
+print(del_w)
+````
+
+_solution.py_
+````python
+import numpy as np
+
+def sigmoid(x):
+    """
+    Calculate sigmoid
+    """
+    return 1/(1+np.exp(-x))
+
+learnrate = 0.5
+x = np.array([1, 2])
+y = np.array(0.5)
+
+# Initial weights
+w = np.array([0.5, -0.5])
+
+# Calculate one gradient descent step for each weight
+# TODO: Calculate output of neural network
+nn_output = sigmoid(np.dot(x, w))
+
+# TODO: Calculate error of neural network
+error = y - nn_output
+
+# TODO: Calculate change in weights
+del_w = learnrate * error * nn_output * (1 - nn_output) * x
+
+print('Neural Network output:')
+print(nn_output)
+print('Amount of Error:')
+print(error)
+print('Change in Weights:')
+print(del_w)
+````
+
 ### 32. Perceptron VS Gradient descent
 
 ### 33. Continuous perceptrons
