@@ -1067,8 +1067,8 @@ following video shows the error function for a neural network.
 Below, we are going to walk through the math of neural networks in a multilayer perceptron. With multiple perceptrons, 
 we are going to move to using vectors and matrices. To brush up, be sure to view the following:
 
-* Khan Academy's introduction to vectors.
-* Khan Academy's introduction to matrices.
+* Khan Academy's [introduction to vectors](https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/vectors/v/vector-introduction-linear-algebra).
+* Khan Academy's [introduction to matrices](https://www.khanacademy.org/math/precalculus/precalc-matrices).
 
 ###### Derivation
 
