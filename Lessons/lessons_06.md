@@ -989,6 +989,7 @@ print(error)
 print('Change in Weights:')
 print(del_w)
 ````
+
 ![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_28.PNG)
 
 ### 32. Perceptron vs Gradient descent
@@ -1008,3 +1009,35 @@ print(del_w)
 [![Non-linear Models](http://img.youtube.com/vi/HWuBKCZsCo8/0.jpg)](https://youtu.be/HWuBKCZsCo8 "Non-linear Models")
 
 ### 36. Neuronal network architecture
+
+Ok, so we're ready to put these building blocks together, and build great Neural Networks! (Or Multi-Layer Perceptrons, 
+however you prefer to call them.)
+
+This first two videos will show us how to combine two perceptrons into a third, more complicated one.
+
+[![Neuronal network architecture 1](http://img.youtube.com/vi/Boy3zHVrWB4/0.jpg)](https://youtu.be/Boy3zHVrWB4 "Neuronal network architecture 1")
+
+[![Neuronal network architecture 2](http://img.youtube.com/vi/FWN3Sw5fFoM/0.jpg)](https://youtu.be/FWN3Sw5fFoM "Neuronal network architecture 2")
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_29.PNG)
+
+###### Multiple layers
+
+Now, not all neural networks look like the one above. They can be way more complicated! In particular, we can do the 
+following things:
+
+* Add more nodes to the input, hidden, and output layers.
+* Add more layers.
+
+We'll see the effects of these changes in the next video.
+
+[![Neuronal network architecture 3](http://img.youtube.com/vi/pg99FkXYK0M/0.jpg)](https://youtu.be/pg99FkXYK0M "Neuronal network architecture 3")
+
+###### Multi-Class Classification
+
+And here we elaborate a bit more into what can be done if our neural network needs to model data with more than one 
+output.
+
+[![Neuronal network architecture 4](http://img.youtube.com/vi/uNTtvxwfox0/0.jpg)](https://youtu.be/uNTtvxwfox0 "Neuronal network architecture 4")
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_30.PNG)
