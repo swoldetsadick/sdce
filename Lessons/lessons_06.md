@@ -1041,3 +1041,32 @@ output.
 [![Neuronal network architecture 4](http://img.youtube.com/vi/uNTtvxwfox0/0.jpg)](https://youtu.be/uNTtvxwfox0 "Neuronal network architecture 4")
 
 ![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_30.PNG)
+
+### 37. Feedforward
+
+### 38. Multilayer perceptron
+
+### 39. Backpropagation
+
+### 40. Further reading
+
+Backpropagation is fundamental to deep learning. TensorFlow and other libraries will perform the backprop for you, but 
+you should really really understand the algorithm. We'll be going over backprop again, but here are some extra resources 
+for you:
+
+* From Andrej Karpathy: [Yes, you should understand backprop](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b#.vt3ax2kg9)
+* Also from Andrej Karpathy, [a lecture from Stanford's CS231n course](https://www.youtube.com/watch?v=59Hbtz7XgjM)
+
+### 41. Create your own neural network
+
+In this lesson, you learned the power of perceptrons. How powerful one perceptron is and the power of a neural network 
+using multiple perceptrons. Then you learned how each perceptron can learn from past samples to come up with a solution.
+
+Now that you understand the basics of a neural network, the next step is to build a basic neural network. In the next 
+lesson, you'll build your own neural network.
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/October/580ea58d_miniflow/miniflow.jpg)
+
+### 42. Summary
+
+[![summary](http://img.youtube.com/vi/m8xslYUBXYo/0.jpg)](https://youtu.be/m8xslYUBXYo "summary")
