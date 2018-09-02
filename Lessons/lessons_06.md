@@ -863,3 +863,15 @@ Therefore, since the gradient descent step simply consists in subtracting a mult
 function at every point, then this updates the weights in the following way:
 
 ![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/06_27.PNG)
+
+### 31. Gradient descent: The code
+
+### 32. Perceptron VS Gradient descent
+
+### 33. Continuous perceptrons
+
+### 34. Non-linear data
+
+### 35. Non-linear Models
+
+### 36. Neuronal network architecture
