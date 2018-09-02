@@ -1044,6 +1044,18 @@ output.
 
 ### 37. Feedforward
 
+Feedforward is the process neural networks use to turn the input into an output. Let's study it more carefully, before 
+we dive into how to train the networks.
+
+[![Feedforward](http://img.youtube.com/vi/pg99FkXYK0M/0.jpg)](https://youtu.be/hVCuvMGOfyY "Feedforward")
+
+###### Error Function
+
+Just as before, neural networks will produce an error function, which at the end, is what we'll be minimizing. The 
+following video shows the error function for a neural network.
+
+[![Error Function](http://img.youtube.com/vi/pg99FkXYK0M/0.jpg)](https://youtu.be/SC1wEW7TtKs "Error Function")
+
 ### 38. Multilayer perceptron
 
 ### 39. Backpropagation
