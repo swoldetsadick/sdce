@@ -1302,6 +1302,47 @@ print(output_layer_out)
 
 ### 39. Backpropagation
 
+Now, we're ready to get our hands into training a neural network. For this, we'll use the method known as 
+**backpropagation**. In a nutshell, backpropagation will consist of:
+
+* Doing a feedforward operation.
+* Comparing the output of the model with the desired output.
+* Calculating the error.
+* Running the feedforward operation backwards (backpropagation) to spread the error to each of the weights.
+* Use this to update the weights, and get a better model.
+* Continue this until we have a model that is good.
+
+Sounds more complicated than what it actually is. Let's take a look in the next few videos. The first video will show us 
+a conceptual interpretation of what backpropagation is.
+
+[![Backpropagation 1](http://img.youtube.com/vi/1SmY3TZTyUk/0.jpg)](https://youtu.be/1SmY3TZTyUk "Backpropagation 1")
+
+###### Backpropagation Math
+
+And the next few videos will go deeper into the math. Feel free to tune out, since this part gets handled by Keras 
+pretty well. If you'd like to go start training networks right away, go to the next section. But if you enjoy 
+calculating lots of derivatives, let's dive in!
+
+In the video below at 1:24, the edges should be directed to the sigmoid function and not the bias at that last layer; 
+the edges of the last layer point to the bias currently which is incorrect.
+
+[![Backpropagation 2](http://img.youtube.com/vi/tVuZDbUrzzI/0.jpg)](https://youtu.be/tVuZDbUrzzI "Backpropagation 2")
+
+###### Chain Rule
+
+We'll need to recall the chain rule to help us calculate derivatives.
+
+[![Backpropagation 3](http://img.youtube.com/vi/YAhIBOnbt54/0.jpg)](https://youtu.be/YAhIBOnbt54 "Backpropagation 3")
+
+[![Backpropagation 4](http://img.youtube.com/vi/7lidiTGIlN4/0.jpg)](https://youtu.be/7lidiTGIlN4 "Backpropagation 4")
+
+###### Calculation of the derivative of the sigmoid function
+
+Recall that the sigmoid function has a beautiful derivative, which we can see in the following calculation. This will 
+make our backpropagation step much cleaner.
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/September/59b6ffad_sigmoid-derivative/sigmoid-derivative.gif)
+
 ### 40. Further reading
 
 Backpropagation is fundamental to deep learning. TensorFlow and other libraries will perform the backprop for you, but 
