@@ -29,7 +29,35 @@ more importantly, you will be able to think and reason in terms of these graphs.
 
 Now, let's take the first peek under the hood...
 
-### 3. 
+### 3. Graphs
+
+###### What is a Neural Network?
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/November/58375218_example-neural-network/example-neural-network.png)
+
+A neural network is a graph of mathematical functions such as [linear combinations](https://en.wikipedia.org/wiki/Linear_combination) 
+and activation functions. The graph consists of **nodes**, and **edges**.
+
+Nodes in each layer (except for nodes in the input layer) perform mathematical functions using inputs from nodes in the 
+previous layers. For example, a node could represent f(x, y) = x + y, where x and y are input values from 
+nodes in the previous layer.
+
+Similarly, each node creates an output value which may be passed to nodes in the next layer. The output value from the 
+output layer does not get passed to a future layer (because it is the final layer).
+
+Layers between the input layer and the output layer are called **hidden layers**.
+
+The edges in the graph describe the connections between the nodes, along which the values flow from one layer to the 
+next. These edges can also apply operations to the values that flow along them, such as multiplying by weights and 
+adding biases. MiniFlow won't use a separate class for edges - instead, its nodes will perform both their own 
+calculations and those of their input edges. This will be more clear as you go through these lessons.
+
+###### Forward Propagation
+
+By propagating values from the first layer (the input layer) through all the mathematical functions represented by each 
+node, the network outputs a value. This process is called a forward pass.
+
+Here's an example of a simple **forward pass**.
 
 [![Starting ML](http://img.youtube.com/vi/UIycORUrPww/0.jpg)](https://youtu.be/UIycORUrPww "Starting ML")
 
