@@ -73,8 +73,10 @@ There are generally two steps to create neural networks:
 1. Define the graph of nodes and edges.
 2. Propagate values through the graph.
 
-MiniFlow works the same way. You'll define the nodes and edges of your network with one method and then propagate values 
-through the graph with another method. MiniFlow comes with some starter code to help you out. We'll take a look on the 
+```MiniFlow``` works the same way. You'll define the nodes and edges of your network with one method and then propagate values 
+through the graph with another method. 
+
+```MiniFlow``` comes with some starter code to help you out. We'll take a look on the 
 next page, but first, let's test your intuition.
 
 ###### Graph Quiz
