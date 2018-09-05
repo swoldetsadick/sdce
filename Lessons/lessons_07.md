@@ -59,7 +59,29 @@ node, the network outputs a value. This process is called a forward pass.
 
 Here's an example of a simple **forward pass**.
 
-[![Starting ML](http://img.youtube.com/vi/UIycORUrPww/0.jpg)](https://youtu.be/UIycORUrPww "Starting ML")
+[![forward pass](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_01.PNG)](https://s3.amazonaws.com/content.udacity-data.com/courses/carnd/videos/input-to-output-2.mp4 "forward pass")
+
+Notice that the output layer performs a mathematical function, addition, on its inputs. There is no hidden layer.
+
+###### Graphs
+
+The nodes and edges create a graph structure. Though the example above is fairly simple, it isn't hard to imagine that 
+increasingly complex graphs can calculate . . . well . . . almost anything.
+
+There are generally two steps to create neural networks:
+
+1. Define the graph of nodes and edges.
+2. Propagate values through the graph.
+
+MiniFlow works the same way. You'll define the nodes and edges of your network with one method and then propagate values 
+through the graph with another method. MiniFlow comes with some starter code to help you out. We'll take a look on the 
+next page, but first, let's test your intuition.
+
+###### Graph Quiz
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/November/58375a5a_addition-graph/addition-graph.png)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_02.PNG)
 
 ### 4. 
 
