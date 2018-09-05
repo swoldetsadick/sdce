@@ -6,7 +6,7 @@
 
 ### 2. Introduction
 
-In this lab, you’ll build a library called MiniFlow which will be your own version of [TensorFlow](http://tensorflow.org/)! (link for [Chine](http://tensorfly.cn/))
+In this lab, you’ll build a library called MiniFlow which will be your own version of [TensorFlow](http://tensorflow.org/)! (link for [China](http://tensorfly.cn/))
 
 TensorFlow is one of the most popular open source neural network libraries, built by the team at Google Brain over just 
 the last few years.
