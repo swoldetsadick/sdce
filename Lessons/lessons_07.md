@@ -663,9 +663,42 @@ def forward_pass(output_node, sorted_nodes):
 
 ![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_05.PNG)
 
-### 7. 
+### 7. Learning and Loss
 
-[![Starting ML](http://img.youtube.com/vi/UIycORUrPww/0.jpg)](https://youtu.be/UIycORUrPww "Starting ML")
+Like ```MiniFlow``` in its current state, neural networks take inputs and produce outputs. But unlike ```MiniFlow``` in its current 
+state, neural networks can improve the accuracy of their outputs over time (it's hard to imagine improving the accuracy 
+of ```Add``` over time!). To explore why accuracy matters, I want you to first implement a trickier (and more useful!) node 
+than ```Add```: the ```Linear``` node.
+
+###### The Linear Function
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/October/58118748_vlcsnap-2016-10-26-21h47m38s028/vlcsnap-2016-10-26-21h47m38s028.png)
+
+Think back to the Neural Networks lesson with Luis and Matt. A simple artificial neuron depends on three components:
+
+* inputs, _x_ (vector)
+* weights, _&#969;_ (vector)
+* bias, _b_ (scalar)
+
+The output, _o_, is just the weighted sum of the inputs plus the bias:
+
+_o_ = &#8721;<sub>i</sub> _x_<sub>_i_</sub> &#8901; _&#969;_<sub>_i_</sub> + _b_
+
+Equation (1)
+
+Remember, by varying the weights, you can vary the amount of influence any given input has on the output. The learning 
+aspect of neural networks takes place during a process known as backpropagation. In backpropogation, the network 
+modifies the weights to improve the network's output accuracy. You'll be applying all of this shortly.
+
+In this next quiz, you'll try to build a linear neuron that generates an output by applying a simplified version of 
+Equation (1). ```Linear``` should take an list of inbound nodes of length n, a list of weights of length n, and a bias.
+
+###### Instructions
+
+1. Open nn.py below. Read through the neural network to see the expected output of ```Linear```.
+2. Open miniflow.py below. Modify ```Linear```, which is a subclass of ```Node```, to generate an output with Equation (1).
+
+(Hint: you could use ```numpy``` to solve this quiz if you'd like, but it's possible to solve this with vanilla Python.)
 
 ### 8. 
 
