@@ -792,7 +792,9 @@ class Linear(Node):
 
         Your code goes here!
         """
-        pass
+        from numpy import multiply as npmultiply
+        self.value = sum(npmultiply(self.inbound_nodes[0].value, self.inbound_nodes[1].value)) \
+                     + self.inbound_nodes[2].value
 
 
 
@@ -855,6 +857,8 @@ def forward_pass(output_node, sorted_nodes):
 
     return output_node.value
 ````
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_06.PNG)
 
 ### 8. 
 

@@ -92,6 +92,27 @@ class Mul(Node):
         self.value = npprod([n.value for n in self.inbound_nodes])
 
 
+class Linear(Node):
+    """ This class represents a linear node in MiniFlow architecture. """
+    def __init__(self, inputs, weights, bias):
+        Node.__init__(self, [inputs, weights, bias])
+
+        # NOTE: The weights and bias properties here are not
+        # numbers, but rather references to other nodes.
+        # The weight and bias values are stored within the
+        # respective nodes.
+
+    def forward(self):
+        """
+        Set self.value to the value of the linear function output.
+
+        Your code goes here!
+        """
+        from numpy import multiply as npmultiply
+        self.value = sum(npmultiply(self.inbound_nodes[0].value, self.inbound_nodes[1].value)) \
+                     + self.inbound_nodes[2].value
+
+
 def topological_sort(feed_dict):
     """
     Sort generic nodes in topological order using Kahn's Algorithm.
@@ -176,6 +197,17 @@ def main(which):
         graph = topological_sort(feed_dict)
         output = forward_pass(f, graph)
         print("{} * {} * {} = {} (according to miniflow)".format(feed_dict[x], feed_dict[y], feed_dict[z], output))
+    elif which == 4:
+        inputs, weights, bias = Input(), Input(), Input()
+        f = Linear(inputs, weights, bias)
+        feed_dict = {
+            inputs: [6, 14, 3],
+            weights: [0.5, 0.25, 1.4],
+            bias: 2
+        }
+        graph = topological_sort(feed_dict)
+        output = forward_pass(f, graph)
+        print(output)  # should be 12.7 with this example
     return None
 
 
@@ -183,3 +215,4 @@ if __name__ == "__main__":
     main(which=1)
     main(which=2)
     main(which=3)
+    main(which=4)
