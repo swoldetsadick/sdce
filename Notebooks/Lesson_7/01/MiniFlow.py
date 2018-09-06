@@ -144,8 +144,37 @@ class Sigmoid(Node):
         """
         # This is a dummy value to prevent numpy errors
         # if you test without changing this method.
-        sigmoider = lambda t: self._sigmoid(t)
-        self.value = [sigmoider(n) for n in self.inbound_nodes[0].value]
+        self.value = self._sigmoid(self.inbound_nodes[0].value)
+
+
+class MSE(Node):
+    def __init__(self, y, a):
+        """
+        The mean squared error cost function.
+        Should be used as the last node for a network.
+        """
+        # Call the base class' constructor.
+        Node.__init__(self, [y, a])
+
+    def forward(self):
+        """
+        Calculates the mean squared error.
+        """
+        # NOTE: We reshape these to avoid possible matrix/vector broadcast
+        # errors.
+        #
+        # For example, if we subtract an array of shape (3,) from an array of shape
+        # (3,1) we get an array of shape(3,3) as the result when we want
+        # an array of shape (3,1) instead.
+        #
+        # Making both arrays (3,1) insures the result is (3,1) and does
+        # an elementwise subtraction as expected.
+        y = self.inbound_nodes[0].value.reshape(-1, 1)
+        a = self.inbound_nodes[1].value.reshape(-1, 1)
+        # TODO: your code here
+        from numpy import square as npsquare
+        from numpy.linalg import norm as npnorm
+        self.value = npsquare(npnorm(y - a)) / len(y)
 
 
 def topological_sort(feed_dict):
@@ -190,7 +219,7 @@ def topological_sort(feed_dict):
     return L
 
 
-def forward_pass(output_node, sorted_nodes):
+def forward_pass(output_node, sorted_nodes=None):
     """
     Performs a forward pass through a list of sorted nodes.
 
@@ -201,10 +230,14 @@ def forward_pass(output_node, sorted_nodes):
 
     Returns the output Node's value
     """
-
-    for n in sorted_nodes:
-        n.forward()
-    return output_node.value
+    if sorted_nodes:
+        for n in sorted_nodes:
+            n.forward()
+        return output_node.value
+    else:
+        # Forward pass
+        for n in output_node:
+            n.forward()
 
 
 def main(which):
@@ -260,6 +293,22 @@ def main(which):
          [  1.23394576e-04   9.82013790e-01]]
         """
         print(output)
+    elif which == 6:
+        import numpy as np
+        y, a = Input(), Input()
+        cost = MSE(y, a)
+        y_ = np.array([1, 2, 3])
+        a_ = np.array([4.5, 5, 10])
+        feed_dict = {y: y_, a: a_}
+        graph = topological_sort(feed_dict)
+        # forward pass
+        forward_pass(graph)
+        """
+        Expected output
+
+        23.4166666667
+        """
+        print(cost.value)
     return None
 
 
@@ -269,3 +318,4 @@ if __name__ == "__main__":
     main(which=3)
     main(which=4)
     main(which=5)
+    main(which=6)
