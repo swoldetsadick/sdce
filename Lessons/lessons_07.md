@@ -1804,9 +1804,9 @@ You might be tempted to set a really big learning rate, so the network learns re
 
 Be careful! If the value is too large you could overshoot the target and eventually diverge. Yikes!
 
-https://d17h27t6h515a5.cloudfront.net/topher/2016/December/5840d0aa_gradient-descent-convergence/gradient-descent-convergence.gif
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/December/5840d0aa_gradient-descent-convergence/gradient-descent-convergence.gif)
 
-https://d17h27t6h515a5.cloudfront.net/topher/2016/December/5840d077_gradient-descent-divergence/gradient-descent-divergence.gif
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/December/5840d077_gradient-descent-divergence/gradient-descent-divergence.gif)
 
 So what is a good learning rate, then?
 
