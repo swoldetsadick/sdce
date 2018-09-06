@@ -71,6 +71,27 @@ class Add(Node):
         self.value = sum([n.value for n in self.inbound_nodes])
 
 
+class Mul(Node):
+    """  This class represents a multiplication node in MiniFlow architecture. """
+    # def __init__(self, x, y):
+    # You could access `x` and `y` in forward with
+    # self.inbound_nodes[0] (`x`) and self.inbound_nodes[1] (`y`)
+    # Node.__init__(self, [x, y])
+    # You may need to change this...
+    def __init__(self, *inputs):
+        Node.__init__(self, inputs)
+
+    def forward(self):
+        """
+        Set the value of this node (`self.value`) to the sum of its inbound_nodes.
+        Remember to grab the value of each inbound_node to sum!
+
+        Your code here!
+        """
+        from numpy import prod as npprod
+        self.value = npprod([n.value for n in self.inbound_nodes])
+
+
 def topological_sort(feed_dict):
     """
     Sort generic nodes in topological order using Kahn's Algorithm.
@@ -148,9 +169,17 @@ def main(which):
         graph = topological_sort(feed_dict)
         output = forward_pass(f, graph)
         print("{} + {} + {} = {} (according to miniflow)".format(feed_dict[x], feed_dict[y], feed_dict[z], output))
+    elif which == 3:
+        x, y, z = Input(), Input(), Input()
+        f = Mul(x, y, z)
+        feed_dict = {x: 4, y: 5, z: 10}
+        graph = topological_sort(feed_dict)
+        output = forward_pass(f, graph)
+        print("{} * {} * {} = {} (according to miniflow)".format(feed_dict[x], feed_dict[y], feed_dict[z], output))
     return None
 
 
 if __name__ == "__main__":
     main(which=1)
     main(which=2)
+    main(which=3)
