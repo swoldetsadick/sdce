@@ -1800,6 +1800,19 @@ between the network's output and the known output. Why?
 
 [![Intro to DL](http://img.youtube.com/vi/uyLRFMI4HkA/0.jpg)](https://youtu.be/uyLRFMI4HkA "Intro to DL")
 
-### 18. 
+### 18. Outro
 
-[![Starting ML](http://img.youtube.com/vi/UIycORUrPww/0.jpg)](https://youtu.be/UIycORUrPww "Starting ML")
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/October/58119d8a_tf/tf.jpeg)
+
+You just built a mini version of TensorFlow!
+
+Congratulations on making it to the end of this lab! Building a neural network from scratch is no small task. You should 
+be proud!
+
+MiniFlow has the makings of becoming a powerful deep learning tool. It is entirely possible to classify something like 
+the [MNIST](http://yann.lecun.com/exdb/mnist/) database with MiniFlow.
+
+I'll leave it as an exercise for you to finish MiniFlow from here.
+
+In the next lessons, you'll work with TensorFlow and then Keras, a high level framework on top of TensorFlow. Now that 
+you've built a neural network from scratch, you should be in great shape!
