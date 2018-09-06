@@ -1415,7 +1415,9 @@ accuracy measurement, often terming it **loss** or **cost**. I'll use the term c
 
 For this lab, you will calculate the cost using the mean squared error (MSE). It looks like so:
 
+C(w,b)= (1/m) ∑<sub>x</sub> ∣∣y(x)−a∣∣<sup>2</sup>
 
+Equation (5)
 
 Here _w_ denotes the collection of all weights in the network, _b_ all the biases, _m_ is the total number of training 
 examples, and aa is the approximation of _y(x)_ by the network. Note that both aa and _y(x)_ are vectors of the same 
