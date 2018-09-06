@@ -1684,6 +1684,8 @@ def forward_pass(graph):
         n.forward()
 ````
 
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_09.PNG)
+
 ### 11. Gradient descent 1
 
 [![Starting ML](http://img.youtube.com/vi/UIycORUrPww/0.jpg)](https://youtu.be/UIycORUrPww "Starting ML")
