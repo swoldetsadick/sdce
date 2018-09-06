@@ -114,6 +114,40 @@ class Linear(Node):
         self.value = npdot(self.inbound_nodes[0].value, self.inbound_nodes[1].value) + self.inbound_nodes[2].value
 
 
+class Sigmoid(Node):
+    """
+    You need to fix the `_sigmoid` and `forward` methods.
+    """
+    def __init__(self, node):
+        Node.__init__(self, [node])
+
+    def _sigmoid(self, x):
+        """
+        This method is separate from `forward` because it
+        will be used later with `backward` as well.
+
+        `x`: A numpy array-like object.
+
+        Return the result of the sigmoid function.
+
+        Your code here!
+        """
+        from numpy import exp as npexp
+        return 1/(1 + npexp(-x))
+
+    def forward(self):
+        """
+        Set the value of this node to the result of the
+        sigmoid function, `_sigmoid`.
+
+        Your code here!
+        """
+        # This is a dummy value to prevent numpy errors
+        # if you test without changing this method.
+        sigmoider = lambda t: self._sigmoid(t)
+        self.value = [sigmoider(n) for n in self.inbound_nodes[0].value]
+
+
 def topological_sort(feed_dict):
     """
     Sort generic nodes in topological order using Kahn's Algorithm.
@@ -209,6 +243,23 @@ def main(which):
         graph = topological_sort(feed_dict)
         output = forward_pass(f, graph)
         print(output)  # should be 12.7 with this example
+    elif which == 5:
+        import numpy as np
+        X, W, b = Input(), Input(), Input()
+        f = Linear(X, W, b)
+        g = Sigmoid(f)
+        X_ = np.array([[-1., -2.], [-1, -2]])
+        W_ = np.array([[2., -3], [2., -3]])
+        b_ = np.array([-3., -5])
+        feed_dict = {X: X_, W: W_, b: b_}
+        graph = topological_sort(feed_dict)
+        output = forward_pass(g, graph)
+        """
+        Output should be:
+        [[  1.23394576e-04   9.82013790e-01]
+         [  1.23394576e-04   9.82013790e-01]]
+        """
+        print(output)
     return None
 
 
@@ -217,3 +268,4 @@ if __name__ == "__main__":
     main(which=2)
     main(which=3)
     main(which=4)
+    main(which=5)
