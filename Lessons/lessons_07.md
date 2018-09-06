@@ -1778,7 +1778,122 @@ between the network's output and the known output. Why?
 
 ### 12. Gradient descent 2
 
-[![Starting ML](http://img.youtube.com/vi/UIycORUrPww/0.jpg)](https://youtu.be/UIycORUrPww "Starting ML")
+###### Journey to the Bottom of the Valley
+
+We know we'd like to move the ball to the bottom of the valley, but how do we accomplish this?
+
+Intuitively, we want to push the ball downhill. And that makes sense, but when we're talking about our cost function, 
+how do we know which way is downhill?
+
+Luckily, the gradient provides this exact information.
+
+Technically, the gradient actually points uphill, in the direction of **steepest ascent**. But if we put a ```-``` sign 
+at the front this value, we get the direction of **steepest descent**, which is what we want.
+
+You'll learn more about the gradient in a moment, but, for now, just think of it as a vector of numbers. Each number 
+represents the amount by which we should adjust a corresponding weight or bias in the neural network. Adjusting all of 
+the weights and biases by the gradient values reduces the cost (or error) of the network.
+
+Got all that?
+
+Great! Now we know where to push the ball. The next thing to consider is how much force should be applied to the push. 
+This is known as the learning rate, which is an apt name since this value determines how quickly or slowly the neural 
+network learns.
+
+You might be tempted to set a really big learning rate, so the network learns really fast, right?
+
+Be careful! If the value is too large you could overshoot the target and eventually diverge. Yikes!
+
+https://d17h27t6h515a5.cloudfront.net/topher/2016/December/5840d0aa_gradient-descent-convergence/gradient-descent-convergence.gif
+
+https://d17h27t6h515a5.cloudfront.net/topher/2016/December/5840d077_gradient-descent-divergence/gradient-descent-divergence.gif
+
+So what is a good learning rate, then?
+
+This is more of a guessing game than anything else but empirically values in the range 0.1 to 0.0001 work well. The 
+range 0.001 to 0.0001 is popular, as 0.1 and 0.01 are sometimes too large.
+
+Here's the formula for gradient descent (pseudocode):
+
+```
+x = x - learning_rate * gradient_of_x
+```
+
+```x``` is a parameter used by the neural network (i.e. a single weight or bias).
+
+We multiply ```gradient_of_x``` (the uphill direction) by ```learning_rate``` (the force of the push) and then subtract 
+that from ```x``` to make the push go downhill.
+
+Awesome! Time to apply all this in a quiz.
+
+###### Setup
+
+For this quiz you'll complete TODOs in both the ```f.py``` and ```gd.py``` files.
+
+Tasks:
+
+* Set the ```learning_rate``` in ```f.py```.
+* Complete the gradient descent implementation in ```gradient_descent_update``` function in ```gd.py```.
+
+Notes:
+
+* Setting the ```learning_rate``` to 0.1 should result in ```x``` -> 0 and ```f(x)``` -> 5 if you've implemented gradient descent correctly.
+* Play around with different values for the learning rate. Try very small values, values close to 1, above 1, etc. What happens?
+
+_f.py_
+````python
+"""
+Given the starting point of any `x` gradient descent
+should be able to find the minimum value of x for the
+cost function `f` defined below.
+"""
+import random
+from gd import gradient_descent_update
+
+
+def f(x):
+    """
+    Quadratic function.
+
+    It's easy to see the minimum value of the function
+    is 5 when is x=0.
+    """
+    return x**2 + 5
+
+
+def df(x):
+    """
+    Derivative of `f` with respect to `x`.
+    """
+    return 2*x
+
+
+# Random number between 0 and 10,000. Feel free to set x whatever you like.
+x = random.randint(0, 10000)
+# TODO: Set the learning rate
+learning_rate = ?
+epochs = 100
+
+for i in range(epochs+1):
+    cost = f(x)
+    gradx = df(x)
+    print("EPOCH {}: Cost = {:.3f}, x = {:.3f}".format(i, cost, gradx))
+    x = gradient_descent_update(x, gradx, learning_rate)
+````
+
+_gd.py_
+````python
+def gradient_descent_update(x, gradx, learning_rate):
+    """
+    Performs a gradient descent update.
+    """
+    # TODO: Implement gradient descent.
+    
+    # Return the new value for x
+    return x
+````
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_12.PNG)
 
 ### 13. 
 
@@ -1802,7 +1917,7 @@ between the network's output and the known output. Why?
 
 ### 18. Outro
 
-![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/October/58119d8a_tf/tf.jpeg)
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_11.jpeg)
 
 You just built a mini version of TensorFlow!
 
