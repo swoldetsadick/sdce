@@ -373,11 +373,10 @@ class Add(Node):
 
         Your code here!
         """
-
-
-"""
-No need to change anything below here!
-"""
+        somme = 0
+        for n in self.inbound_nodes:
+            somme += n.value
+        self.value = somme
 
 
 def topological_sort(feed_dict):
