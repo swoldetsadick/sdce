@@ -53,10 +53,13 @@ class Input(Node):
 
 class Add(Node):
     """  This class represents a add node in MiniFlow architecture. """
-    def __init__(self, x, y):
-        # You could access `x` and `y` in forward with
-        # self.inbound_nodes[0] (`x`) and self.inbound_nodes[1] (`y`)
-        Node.__init__(self, [x, y])
+    # def __init__(self, x, y):
+    # You could access `x` and `y` in forward with
+    # self.inbound_nodes[0] (`x`) and self.inbound_nodes[1] (`y`)
+    # Node.__init__(self, [x, y])
+    # You may need to change this...
+    def __init__(self, *inputs):
+        Node.__init__(self, inputs)
 
     def forward(self):
         """
@@ -65,10 +68,7 @@ class Add(Node):
 
         Your code here!
         """
-        somme = 0
-        for n in self.inbound_nodes:
-            somme += n.value
-        self.value = somme
+        self.value = sum([n.value for n in self.inbound_nodes])
 
 
 def topological_sort(feed_dict):
@@ -130,12 +130,27 @@ def forward_pass(output_node, sorted_nodes):
     return output_node.value
 
 
+def main(which):
+    """ This is main function. """
+    if which == 1:
+        x, y = Input(), Input()
+        f = Add(x, y)
+        feed_dict = {x: 10, y: 5}
+        sorted_nodes = topological_sort(feed_dict)
+        output = forward_pass(f, sorted_nodes)
+        # NOTE: because topological_sort sets the values for the `Input` nodes we could also access
+        # the value for x with x.value (same goes for y).
+        print("{} + {} = {} (according to miniflow)".format(feed_dict[x], feed_dict[y], output))
+    elif which == 2:
+        x, y, z = Input(), Input(), Input()
+        f = Add(x, y, z)
+        feed_dict = {x: 4, y: 5, z: 10}
+        graph = topological_sort(feed_dict)
+        output = forward_pass(f, graph)
+        print("{} + {} + {} = {} (according to miniflow)".format(feed_dict[x], feed_dict[y], feed_dict[z], output))
+    return None
+
+
 if __name__ == "__main__":
-    x, y = Input(), Input()
-    f = Add(x, y)
-    feed_dict = {x: 10, y: 5}
-    sorted_nodes = topological_sort(feed_dict)
-    output = forward_pass(f, sorted_nodes)
-    # NOTE: because topological_sort sets the values for the `Input` nodes we could also access
-    # the value for x with x.value (same goes for y).
-    print("{} + {} = {} (according to miniflow)".format(feed_dict[x], feed_dict[y], output))
+    main(which=1)
+    main(which=2)

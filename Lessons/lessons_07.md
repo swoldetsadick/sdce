@@ -599,9 +599,7 @@ class Add(Node):
         For reference, here's the old way from the last
         quiz. You'll want to write code here.
         """
-        # x_value = self.inbound_nodes[0].value
-        # y_value = self.inbound_nodes[1].value
-        # self.value = x_value + y_value
+        self.value = sum([n.value for n in self.inbound_nodes])
 
 def topological_sort(feed_dict):
     """
@@ -662,6 +660,9 @@ def forward_pass(output_node, sorted_nodes):
 
     return output_node.value
 ````
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_05.PNG)
+
 ### 7. 
 
 [![Starting ML](http://img.youtube.com/vi/UIycORUrPww/0.jpg)](https://youtu.be/UIycORUrPww "Starting ML")
