@@ -1806,7 +1806,10 @@ Be careful! If the value is too large you could overshoot the target and eventua
 
 ![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/December/5840d0aa_gradient-descent-convergence/gradient-descent-convergence.gif)
 
+**Convergence: This is really good**
+
 ![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/December/5840d077_gradient-descent-divergence/gradient-descent-divergence.gif)
+**Divergence: Not good this is what happens when learning rate is too big**
 
 So what is a good learning rate, then?
 
