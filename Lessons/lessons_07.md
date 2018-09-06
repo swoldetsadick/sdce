@@ -1875,7 +1875,7 @@ def df(x):
 # Random number between 0 and 10,000. Feel free to set x whatever you like.
 x = random.randint(0, 10000)
 # TODO: Set the learning rate
-learning_rate = ?
+learning_rate = 0.1
 epochs = 100
 
 for i in range(epochs+1):
@@ -1894,7 +1894,7 @@ def gradient_descent_update(x, gradx, learning_rate):
     # TODO: Implement gradient descent.
     
     # Return the new value for x
-    return x
+    return x - learning_rate * gradx
 ````
 
 ![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_12.PNG)
