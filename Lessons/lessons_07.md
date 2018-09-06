@@ -216,7 +216,7 @@ In order to define your network, you'll need to define the order of operations f
 some node depends on the outputs of others, you need to flatten the graph in such a way where all the input dependencies 
 for each node are resolved before trying to run its calculation. This is a technique called a [topological sort](https://en.wikipedia.org/wiki/Topological_sorting).
 
-![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/October/581037bb_topological-sort.001/topological-sort.001.jpeg)
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_04.jpeg)
 
 The ```topological_sort()``` function implements topological sorting using [Kahn's Algorithm](https://en.wikipedia.org/wiki/Topological_sorting#Kahn.27s_algorithm). The details of this method are 
 not important, the result is; ```topological_sort()``` returns a sorted list of nodes in which all of the calculations 
