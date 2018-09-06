@@ -108,9 +108,10 @@ class Linear(Node):
 
         Your code goes here!
         """
-        from numpy import multiply as npmultiply
-        self.value = sum(npmultiply(self.inbound_nodes[0].value, self.inbound_nodes[1].value)) \
-                     + self.inbound_nodes[2].value
+        # from numpy import multiply as npmultiply
+        # self.value = sum(npmultiply(self.inbound_nodes[0].value, self.inbound_nodes[1].value)) + self.inbound_nodes[2].value
+        from numpy import dot as npdot
+        self.value = npdot(self.inbound_nodes[0].value, self.inbound_nodes[1].value) + self.inbound_nodes[2].value
 
 
 def topological_sort(feed_dict):

@@ -1061,6 +1061,8 @@ class Linear(Node):
 
         Your code goes here!
         """
+        from numpy import dot as npdot
+        self.value = npdot(self.inbound_nodes[0].value, self.inbound_nodes[1].value) + self.inbound_nodes[2].value
 
 
 def topological_sort(feed_dict):
@@ -1125,19 +1127,19 @@ def forward_pass(output_node, sorted_nodes):
 
 ![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_07.PNG)
 
-### 9. 
+### 9. Sigmoid function
 
 [![Neuronal Networks: Intuition](http://img.youtube.com/vi/UKEIHK5IifI/0.jpg)](https://youtu.be/UKEIHK5IifI "Neuronal Networks: Intuition")
 
-### 10. 
+### 10. Cost
 
 [![Intro to DL](http://img.youtube.com/vi/uyLRFMI4HkA/0.jpg)](https://youtu.be/uyLRFMI4HkA "Intro to DL")
 
-### 11. 
+### 11. Gradient descent 1
 
 [![Starting ML](http://img.youtube.com/vi/UIycORUrPww/0.jpg)](https://youtu.be/UIycORUrPww "Starting ML")
 
-### 12. 
+### 12. Gradient descent 2
 
 [![Starting ML](http://img.youtube.com/vi/UIycORUrPww/0.jpg)](https://youtu.be/UIycORUrPww "Starting ML")
 
