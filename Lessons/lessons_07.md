@@ -441,10 +441,227 @@ def forward_pass(output_node, sorted_nodes):
 
 ![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_03.PNG)
 
-### 6. 
+### 6. Forward propagation solution
 
-[![Intro to DL](http://img.youtube.com/vi/uyLRFMI4HkA/0.jpg)](https://youtu.be/uyLRFMI4HkA "Intro to DL")
+Here's my solution (I'm just showing ```forward``` method of the ```Add``` class):
 
+```
+def forward(self):
+    x_value = self.inbound_nodes[0].value
+    y_value = self.inbound_nodes[1].value
+    self.value = x_value + y_value
+```
+
+While this looks simple, I want to show you why I used ```x_value``` and ```y_value``` from the ```inbound_nodes``` 
+array. Let's take a look at the start with ```Node```'s constructor:
+
+```
+class Node(object):
+    def __init__(self, inbound_nodes=[]):
+        # Node(s) from which this Node receives values.
+        self.inbound_nodes = inbound_nodes
+        # Removed everything else for brevity.
+```
+
+```inbound_nodes``` are set when the ```Node``` is instantiated.
+
+Of course, you weren't using ```Node``` directly, rather you used ```Add```, which is a subclass of ```Node```. 
+```Add```'s constructor is responsible for passing the ```inbound_nodes``` to ```Node```, which happens here:
+
+```
+class Add(Node):
+    def __init__(self, x, y):
+         Node.__init__(self, [x, y]) # calls Node's constructor
+    ...
+```
+
+Lastly, there's the question of why ```node.value``` holds the value of the inputs. For each node of the ```Input()``` 
+class, the nodes are set directly when you run ```topological_sort```:
+
+```
+def topological_sort(feed_dict):
+    ...
+    if isinstance(n, Input):
+        n.value = feed_dict[n]
+    ...
+```
+
+For other classes, the value of node.value is set in the forward pass:
+
+```
+def forward_pass(output_node, sorted_nodes):
+    ...
+    for n in sorted_nodes:
+        n.forward()
+    ...
+```
+
+And that's it for addition!
+
+Keep going to make ```MiniFlow``` more capable.
+
+###### Bonus Challenges!
+
+These are **ungraded** challenges as they are more of a test of your Python skills than neural network skills.
+
+1. Can you make ```Add``` accept any number of inputs? Eg. ```Add(x, y, z)```.
+2. Can you make a ```Mul``` class that multiplies _n_ inputs?
+
+_nn.py_
+````python
+"""
+No need to change anything here!
+
+If all goes well, this should work after you
+modify the Add class in miniflow.py.
+"""
+
+from miniflow import *
+
+x, y, z = Input(), Input(), Input()
+
+f = Add(x, y, z)
+
+feed_dict = {x: 4, y: 5, z: 10}
+
+graph = topological_sort(feed_dict)
+output = forward_pass(f, graph)
+
+# should output 19
+print("{} + {} + {} = {} (according to miniflow)".format(feed_dict[x], feed_dict[y], feed_dict[z], output))
+````
+
+_miniflow.py_
+````python
+"""
+Bonus Challenge!
+
+Write your code in Add (scroll down).
+"""
+
+class Node(object):
+    def __init__(self, inbound_nodes=[]):
+        # Nodes from which this Node receives values
+        self.inbound_nodes = inbound_nodes
+        # Nodes to which this Node passes values
+        self.outbound_nodes = []
+        # A calculated value
+        self.value = None
+        # Add this node as an outbound node on its inputs.
+        for n in self.inbound_nodes:
+            n.outbound_nodes.append(self)
+
+    # These will be implemented in a subclass.
+    def forward(self):
+        """
+        Forward propagation.
+
+        Compute the output value based on `inbound_nodes` and
+        store the result in self.value.
+        """
+        raise NotImplemented
+
+
+class Input(Node):
+    def __init__(self):
+        # An Input Node has no inbound nodes,
+        # so no need to pass anything to the Node instantiator
+        Node.__init__(self)
+
+    # NOTE: Input Node is the only Node where the value
+    # may be passed as an argument to forward().
+    #
+    # All other Node implementations should get the value
+    # of the previous nodes from self.inbound_nodes
+    #
+    # Example:
+    # val0 = self.inbound_nodes[0].value
+    def forward(self, value=None):
+        # Overwrite the value if one is passed in.
+        if value is not None:
+            self.value = value
+
+
+"""
+Can you augment the Add class so that it accepts
+any number of nodes as input?
+
+Hint: this may be useful:
+https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
+"""
+class Add(Node):
+    # You may need to change this...
+    def __init__(self, *inputs):
+        Node.__init__(self, inputs)
+
+    def forward(self):
+        """
+        For reference, here's the old way from the last
+        quiz. You'll want to write code here.
+        """
+        # x_value = self.inbound_nodes[0].value
+        # y_value = self.inbound_nodes[1].value
+        # self.value = x_value + y_value
+
+def topological_sort(feed_dict):
+    """
+    Sort the nodes in topological order using Kahn's Algorithm.
+
+    `feed_dict`: A dictionary where the key is a `Input` Node and the value is the respective value feed to that Node.
+
+    Returns a list of sorted nodes.
+    """
+
+    input_nodes = [n for n in feed_dict.keys()]
+
+    G = {}
+    nodes = [n for n in input_nodes]
+    while len(nodes) > 0:
+        n = nodes.pop(0)
+        if n not in G:
+            G[n] = {'in': set(), 'out': set()}
+        for m in n.outbound_nodes:
+            if m not in G:
+                G[m] = {'in': set(), 'out': set()}
+            G[n]['out'].add(m)
+            G[m]['in'].add(n)
+            nodes.append(m)
+
+    L = []
+    S = set(input_nodes)
+    while len(S) > 0:
+        n = S.pop()
+
+        if isinstance(n, Input):
+            n.value = feed_dict[n]
+
+        L.append(n)
+        for m in n.outbound_nodes:
+            G[n]['out'].remove(m)
+            G[m]['in'].remove(n)
+            # if no other incoming edges add to S
+            if len(G[m]['in']) == 0:
+                S.add(m)
+    return L
+
+
+def forward_pass(output_node, sorted_nodes):
+    """
+    Performs a forward pass through a list of sorted nodes.
+
+    Arguments:
+
+        `output_node`: A node in the graph, should be the output node (have no outgoing edges).
+        `sorted_nodes`: A topologically sorted list of nodes.
+
+    Returns the output Node's value
+    """
+
+    for n in sorted_nodes:
+        n.forward()
+
+    return output_node.value
+````
 ### 7. 
 
 [![Starting ML](http://img.youtube.com/vi/UIycORUrPww/0.jpg)](https://youtu.be/UIycORUrPww "Starting ML")
