@@ -2303,6 +2303,7 @@ class Sigmoid(Node):
 
             NOTE: See the Linear node and MSE node for examples.
             """
+            self.gradients[self.inbound_nodes[0]] += self.value * (1 - self.value) * grad_cost
 
 
 class MSE(Node):
