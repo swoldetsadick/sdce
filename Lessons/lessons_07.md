@@ -1911,7 +1911,7 @@ def gradient_descent_update(x, gradx, learning_rate):
 
 [![Intro to DL](http://img.youtube.com/vi/uyLRFMI4HkA/0.jpg)](https://youtu.be/uyLRFMI4HkA "Intro to DL")
 
-### 16. 
+### 16. Under the hood part I
 
 ###### It's working, but...
 
@@ -1946,9 +1946,29 @@ It may be useful to note again here that the weights are tied to each feature fr
 tied to each input separately (i.e., the first weight ties to the first feature for both of our data points, while the 
 first gradient ties to the first data point as a whole).
 
-### 17. 
+### 17. Under the hood part II
 
-[![Intro to DL](http://img.youtube.com/vi/uyLRFMI4HkA/0.jpg)](https://youtu.be/uyLRFMI4HkA "Intro to DL")
+###### What's the backward pass doing?
+
+Now that we've re-established the flow of the variables, let's show the steps within the backward pass more explicitly.
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_16.jpeg)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_17.jpeg)
+
+###### Converting to matrix multiplication
+
+Let's look back at our matrices from before to show how the above equations work with matrix multiplication.
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_18.jpeg)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_19.jpeg)
+
+###### That's it!
+
+You've now calculated the partial derivative we need to be able to update our weights, as well as the partial derivative 
+of the input that we would feed to another layer, if that layer existed (i.e., our gradient with respect to X would 
+become the gradient for the next layer upward in the network architecture).
 
 ### 18. Outro
 
