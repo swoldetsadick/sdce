@@ -1952,17 +1952,17 @@ first gradient ties to the first data point as a whole).
 
 Now that we've re-established the flow of the variables, let's show the steps within the backward pass more explicitly.
 
-![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_16.jpeg)
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_16.PNG)
 
-![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_17.jpeg)
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_17.PNG)
 
 ###### Converting to matrix multiplication
 
 Let's look back at our matrices from before to show how the above equations work with matrix multiplication.
 
-![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_18.jpeg)
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_18.PNG)
 
-![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_19.jpeg)
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_19.PNG)
 
 ###### That's it!
 
