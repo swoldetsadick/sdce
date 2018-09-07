@@ -1913,7 +1913,38 @@ def gradient_descent_update(x, gradx, learning_rate):
 
 ### 16. 
 
-[![Neuronal Networks: Intuition](http://img.youtube.com/vi/UKEIHK5IifI/0.jpg)](https://youtu.be/UKEIHK5IifI "Neuronal Networks: Intuition")
+###### It's working, but...
+
+You've now implemented a basic neural network, with a forward pass, backpropagation, and the ability to train the 
+network to output an updated model.
+
+If backpropagation still feels like a mystery to you, let's walk through a brief example to hopefully give you more 
+intuition on what's occurring at a low level in the network. If you already feel comfortable with backpropagation, feel 
+free to skip this section.
+
+We'll focus on a simpler backwards pass that performs similarly to our ```Linear``` class from before.
+
+###### Defining our variables
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_13.PNG)
+
+###### Forward and backward pass
+
+We'll ignore the bias in the above graph for now.
+
+Note that the forward pass here takes our input, _X_, and takes the dot product against the weights, _W_, to produce the 
+value of the ```Linear``` layer, _l<sub>1</sub>_. We're actually going to skip over what happens from _l<sub>1</sub>_ 
+onward, so we'll just show this forward pass as getting fed there each time.
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_14.PNG)
+​
+Going backwards for backpropagation, we'll get the gradient g<sub>i</sub> in place of l<sub>1</sub> from before: 
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/07_15.PNG) 
+
+It may be useful to note again here that the weights are tied to each feature from an input, while the gradients are 
+tied to each input separately (i.e., the first weight ties to the first feature for both of our data points, while the 
+first gradient ties to the first data point as a whole).
 
 ### 17. 
 
