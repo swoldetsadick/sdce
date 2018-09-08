@@ -1339,4 +1339,4 @@ Remember that you can get assistance from [Knowledge](https://knowledge.udacity.
 
 ### 40. Lab: Neural network workspace
 
-
+[Project Here](https://github.com/swoldetsadick/sdce/blob/master/Notebooks/Lesson_8/lab/md/lab.md)
