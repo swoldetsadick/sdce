@@ -1311,7 +1311,7 @@ to improve the model's accuracy.
 
 ### 38. AWS GPU instances
 
-![Follow this link](https://classroom.udacity.com/nanodegrees/nd013/parts/fbf77062-5703-404e-b60c-95b78b2f3f9e/modules/6df7ae49-c61c-4bb2-a23e-6527e69209ec/lessons/91cc6685-08df-4277-b53d-3a792b02420d/concepts/f6fccba8-0009-4d05-9356-fae428b6efb4)
+[Follow this link](https://classroom.udacity.com/nanodegrees/nd013/parts/fbf77062-5703-404e-b60c-95b78b2f3f9e/modules/6df7ae49-c61c-4bb2-a23e-6527e69209ec/lessons/91cc6685-08df-4277-b53d-3a792b02420d/concepts/f6fccba8-0009-4d05-9356-fae428b6efb4)
 
 ### 39. Introduction to Tensorflow neuronal network
 
