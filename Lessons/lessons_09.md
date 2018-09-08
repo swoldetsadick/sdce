@@ -2,7 +2,7 @@
 
 ### 1. Let's go deeper
 
-[![Let's go deeper](http://img.youtube.com/vi/saVZ_X9GfIM/0.jpg)](https://youtu.be/saVZ_X9GfIM  "Let's go deeper")
+[![Let's go deeper](http://img.youtube.com/vi/SzTpc_EWbDs/0.jpg)](https://youtu.be/SzTpc_EWbDs "Let's go deeper")
 
 ### 2. Introduction to deep neural networks
 
