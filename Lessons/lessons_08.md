@@ -500,7 +500,7 @@ This is because ```u``` is the same dimension as the last dimension in ```t```.
 
 ### 19. One-hot encoding
 
-[![One-hot encoding](http://img.youtube.com/vi//0.jpg)](https://youtu.be/phYsxqlilUk "One-hot encoding")
+[![One-hot encoding](http://img.youtube.com/vi/phYsxqlilUk/0.jpg)](https://youtu.be/phYsxqlilUk "One-hot encoding")
 
 ### 20. Quizz: One-hot encoding
 
