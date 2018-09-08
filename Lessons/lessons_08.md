@@ -551,6 +551,43 @@ Implement the softmax function, which is specified by the formula at the top of 
 
 The probabilities for each column must sum to 1. Feel free to test your function with the inputs above.
 
+_main-code.py_
+````python
+# Solution is available in the other "solution.py" tab
+import numpy as np
+
+
+def softmax(x):
+    """Compute softmax values for each sets of scores in x."""
+    # TODO: Compute and return softmax(x)
+    exp = np.exp(x)
+    try:
+        _ = len(exp[0])
+        return exp/exp.sum(axis=0, keepdims=True)
+    except:
+        return exp/np.sum(exp)
+
+logits = [3.0, 1.0, 0.2]
+print(softmax(logits))
+````
+
+_solution.py_
+````python
+# Quiz Solution
+# Note: You can't run code in this tab
+import numpy as np
+
+
+def softmax(x):
+    """Compute softmax values for each sets of scores in x."""
+    return np.exp(x) / np.sum(np.exp(x), axis=0)
+
+logits = [3.0, 1.0, 0.2]
+print(softmax(logits))
+````
+
+![quiz 08.14](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/08_05.PNG)
+
 ### 18. Quiz: TensorFlow softmax workspace
 
 ###### TensorFlow softmax
@@ -570,13 +607,13 @@ Use the softmax function in the quiz below to return the softmax of the logits.
 
 ![alt text](https://s3.amazonaws.com/video.udacity-data.com/topher/2017/February/58950908_softmax-input-output/softmax-input-output.png)
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/08_06.PNG)
 
 ###### Quiz
 
 Answer the following 2 questions about softmax.
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/08_07.PNG)
 
 ### 19. One-hot encoding
 
@@ -586,7 +623,7 @@ Answer the following 2 questions about softmax.
 
 ![quiz 8.20](https://d17h27t6h515a5.cloudfront.net/topher/2016/October/58015400_base-hot-enc/base-hot-enc.png)
 
-![quiz 08.14](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/08_.PNG)
+![quiz 08.14](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/08_08.PNG)
 
 ### 2. 
 
