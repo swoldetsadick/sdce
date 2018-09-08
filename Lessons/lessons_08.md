@@ -657,7 +657,7 @@ Answer the following 2 questions about softmax.
 
 ### 28. Validation and test set size
 
-[![Validation and test set size](http://img.youtube.com/vi//0.jpg)]( "Validation and test set size")
+[![Validation and test set size](http://img.youtube.com/vi/iC2QOiavbrw /0.jpg)](https://youtu.be/iC2QOiavbrw "Validation and test set size")
 
 ### 29. Quiz: Validation set size
 
