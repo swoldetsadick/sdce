@@ -1104,8 +1104,11 @@ size is 128. If you have memory restrictions, feel free to make it smaller.
 
 ![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/08_15.PNG)
 
+[Full view here](https://github.com/swoldetsadick/sdce/blob/master/Notebooks/Lesson_8/04/quiz.md)
+
 The accuracy is low, but you probably know that you could train on the dataset more than once. You can train a model 
 using the dataset multiple times. You'll go over this subject in the next section where we talk about "epochs".
+
 
 ### 37. Epochs
 
