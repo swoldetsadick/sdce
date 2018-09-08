@@ -84,6 +84,38 @@ In this quiz, you'll use TensorFlow's ReLU function to turn the linear model bel
 
 [![The chain rule](http://img.youtube.com/vi/DxOg_olir0k/0.jpg)](https://youtu.be/DxOg_olir0k "The chain rule")
 
+### 11. Backpropagation
+
+[![Backpropagation](http://img.youtube.com/vi/wSXcrBbY8oE/0.jpg)](https://youtu.be/wSXcrBbY8oE "Backpropagation")
+
+### 12. Deep neural networks in TF
+
+[![](http://img.youtube.com/vi//0.jpg)]( "")
+
+### 13. Training deep learning network
+
+[![Training deep learning network](http://img.youtube.com/vi/CsB7yUtMJyk/0.jpg)](https://youtu.be/CsB7yUtMJyk "Training deep learning network")
+
+### 14. Save and restore TF models
+
+[![](http://img.youtube.com/vi//0.jpg)]( "")
+
+### 15. Finetuning
+
+[![](http://img.youtube.com/vi//0.jpg)]( "")
+
+### 1. 
+
+[![](http://img.youtube.com/vi//0.jpg)]( "")
+
+### 1. 
+
+[![](http://img.youtube.com/vi//0.jpg)]( "")
+
+### 1. 
+
+[![](http://img.youtube.com/vi//0.jpg)]( "")
+
 ### 1. 
 
 [![](http://img.youtube.com/vi//0.jpg)]( "")
