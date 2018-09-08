@@ -1095,7 +1095,17 @@ using the dataset multiple times. You'll go over this subject in the next sectio
 
 ### 36. Quiz: Mini-batch 2
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+Let's use mini-batching to feed batches of MNIST features and labels into a linear model.
+
+Set the batch size and run the optimizer over all the batches with the batches function. The recommended ```batch``` 
+size is 128. If you have memory restrictions, feel free to make it smaller.
+
+**This quiz is not graded, see the solution notebook for one way to solve this quiz.**
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/08_15.PNG)
+
+The accuracy is low, but you probably know that you could train on the dataset more than once. You can train a model 
+using the dataset multiple times. You'll go over this subject in the next section where we talk about "epochs".
 
 ### 37. Epochs
 
