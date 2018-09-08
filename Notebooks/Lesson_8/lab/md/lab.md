@@ -566,30 +566,51 @@ print('Nice Job! Test Accuracy is {}'.format(test_accuracy))
 
 
 Epochs: 1
+
 Batch Size:
+
 2000  Validation accuracy at 0.09960000216960907
+
 1000  Validation accuracy at 0.1414666622877121
+
 500   Validation accuracy at 0.256933331489563
+
 300   Validation accuracy at 0.3752000033855438
+
 ```50    Validation accuracy at 0.6537333130836487```
+
 Learning Rate: 0.01
 
 Epochs: 1
+
 Batch Size: 100
+
 Learning Rate:
+
 0.8   Validation accuracy at 0.09960000216960907
+
 0.5   Validation accuracy at 0.09960000216960907
+
 ```0.1   Validation accuracy at 0.7436000108718872```
+
 0.05  Validation accuracy at 0.09960000216960907
+
 0.01  Validation accuracy at 0.5820000171661377
 
 Epochs:
+
 1  Validation accuracy at 0.752133309841156
+
 2  Validation accuracy at 0.09960000216960907
+
 3  Validation accuracy at 0.7784000039100647
+
 4  Validation accuracy at 0.7826666831970215
+
 ```5  Validation accuracy at 0.7857333421707153```
+
 Batch Size: 100
+
 Learning Rate: 0.2
 
 # Multiple layers
