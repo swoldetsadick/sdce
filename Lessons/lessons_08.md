@@ -742,8 +742,6 @@ _bias Shape: (10,) Type: float32_
 
 ![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/08_11.PNG)
 
-![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/08_12.PNG)
-
 ### 36. Quiz: Mini-batch 2
 
 [![](http://img.youtube.com/vi//0.jpg)]( "")
