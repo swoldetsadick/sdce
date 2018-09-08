@@ -1311,12 +1311,32 @@ to improve the model's accuracy.
 
 ### 38. AWS GPU instances
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+![Follow this link](https://classroom.udacity.com/nanodegrees/nd013/parts/fbf77062-5703-404e-b60c-95b78b2f3f9e/modules/6df7ae49-c61c-4bb2-a23e-6527e69209ec/lessons/91cc6685-08df-4277-b53d-3a792b02420d/concepts/f6fccba8-0009-4d05-9356-fae428b6efb4)
 
 ### 39. Introduction to Tensorflow neuronal network
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+###### TensorFlow Neural Network Lab
+
+![alt text](http://yaroslavvb.com/upload/notMNIST/nmn.png)
+
+We've prepared a Jupyter notebook that will guide you through the process of creating a single layer neural network in 
+TensorFlow.
+
+###### The Notebook
+
+The notebook has 3 problems for you to solve:
+
+* Problem 1: Normalize the features
+* Problem 2: Use TensorFlow operations to create features, labels, weight, and biases tensors
+* Problem 3: Tune the learning rate, number of steps, and batch size for the best accuracy
+
+This is a self-assessed lab. Compare your answers to the solutions in the solutions.ipynb . If you have any difficulty 
+completing the lab, Udacity provides a few services to answer any questions you might have.
+
+###### Help
+Remember that you can get assistance from [Knowledge](https://knowledge.udacity.com/) or the 
+[Slack channel](https://carnd-slack.udacity.com/). You can also review the concepts from the previous lessons.
 
 ### 40. Lab: Neural network workspace
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+
