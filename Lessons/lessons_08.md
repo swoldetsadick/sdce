@@ -625,6 +625,26 @@ Answer the following 2 questions about softmax.
 
 ![quiz 08.14](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/08_08.PNG)
 
+### 21. Cross entropy
+
+[![Cross entropy](http://img.youtube.com/vi/tRsSi_sqXjI/0.jpg)](https://youtu.be/tRsSi_sqXjI "Cross entropy")
+
+### 22. Minimizing cross-entropy
+
+[![](http://img.youtube.com/vi//0.jpg)]( "")
+
+### 23. Practical aspects of learning
+
+[![](http://img.youtube.com/vi//0.jpg)]( "")
+
+### 24. Quiz: Numerical stability
+
+[![](http://img.youtube.com/vi//0.jpg)]( "")
+
+### 25. Normalized inputs and initial weights
+
+[![](http://img.youtube.com/vi//0.jpg)]( "")
+
 ### 2. 
 
 [![](http://img.youtube.com/vi//0.jpg)]( "")
