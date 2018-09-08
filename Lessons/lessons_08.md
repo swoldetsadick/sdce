@@ -669,6 +669,85 @@ Answer the following 2 questions about softmax.
 
 [![Validation test set size continued](http://img.youtube.com/vi/cgoB-MJObmw/0.jpg)](https://youtu.be/cgoB-MJObmw "Validation test set size continued")
 
+### 31. Optimizing a logistic classifier
+
+[![Optimizing a logistic classifier](http://img.youtube.com/vi/U_7nO1dm2tY/0.jpg)](https://youtu.be/U_7nO1dm2tY "Optimizing a logistic classifier")
+
+### 32. Stochastic gradient descent
+
+[![Stochastic gradient descent](http://img.youtube.com/vi/U9iEGUd9kJ0/0.jpg)](https://youtu.be/U9iEGUd9kJ0 "Stochastic gradient descent")
+
+### 33. Momentum and learning rate decay
+
+[![Momentum and learning rate decay](http://img.youtube.com/vi/O3QYdmQjXds/0.jpg)](https://youtu.be/O3QYdmQjXds "Momentum and learning rate decay")
+
+### 34. Parameter hyperspace
+
+[![Parameter hyperspace](http://img.youtube.com/vi/5a3-iIhdguc/0.jpg)](https://youtu.be/5a3-iIhdguc "Parameter hyperspace")
+
+### 35. Quiz: Mini-batch
+
+###### Mini-batching
+
+In this section, you'll go over what mini-batching is and how to apply it in TensorFlow.
+
+Mini-batching is a technique for training on subsets of the dataset instead of all the data at one time. This provides 
+the ability to train a model, even if a computer lacks the memory to store the entire dataset.
+
+Mini-batching is computationally inefficient, since you can't calculate the loss simultaneously across all samples. 
+However, this is a small price to pay in order to be able to run the model at all.
+
+It's also quite useful combined with SGD. The idea is to randomly shuffle the data at the start of each epoch, then 
+create the mini-batches. For each mini-batch, you train the network weights with gradient descent. Since these batches 
+are random, you're performing SGD with each batch.
+
+Let's look at the MNIST dataset with weights and a bias to see if your machine can handle it.
+
+```
+from tensorflow.examples.tutorials.mnist import input_data
+import tensorflow as tf
+
+n_input = 784  # MNIST data input (img shape: 28*28)
+n_classes = 10  # MNIST total classes (0-9 digits)
+
+# Import MNIST data
+mnist = input_data.read_data_sets('/datasets/ud730/mnist', one_hot=True)
+
+# The features are already scaled and the data is shuffled
+train_features = mnist.train.images
+test_features = mnist.test.images
+
+train_labels = mnist.train.labels.astype(np.float32)
+test_labels = mnist.test.labels.astype(np.float32)
+
+# Weights & bias
+weights = tf.Variable(tf.random_normal([n_input, n_classes]))
+bias = tf.Variable(tf.random_normal([n_classes]))
+```
+
+###### Question 1
+
+Calculate the memory size of ```train_features```, ```train_labels```, ```weights```, and ```bias``` in bytes. Ignore 
+memory for overhead, just calculate the memory required for the stored data.
+
+You may have to look up how much memory a float32 requires, using [this link](https://en.wikipedia.org/wiki/Single-precision_floating-point_format).
+
+_train_features Shape: (55000, 784) Type: float32_
+
+_train_labels Shape: (55000, 10) Type: float32_
+
+_weights Shape: (784, 10) Type: float32_
+
+_bias Shape: (10,) Type: float32_
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/08_11.PNG)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/08_12.PNG)
+
+### 36. Quiz: Mini-batch 2
+
+[![](http://img.youtube.com/vi//0.jpg)]( "")
+
 ### 3. 
 
 [![](http://img.youtube.com/vi//0.jpg)]( "")
