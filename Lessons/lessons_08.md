@@ -1097,6 +1097,18 @@ using the dataset multiple times. You'll go over this subject in the next sectio
 
 [![](http://img.youtube.com/vi//0.jpg)]( "")
 
-### 3. 
+### 37. Epochs
+
+[![](http://img.youtube.com/vi//0.jpg)]( "")
+
+### 38. AWS GPU instances
+
+[![](http://img.youtube.com/vi//0.jpg)]( "")
+
+### 39. Introduction to Tensorflow neuronal network
+
+[![](http://img.youtube.com/vi//0.jpg)]( "")
+
+### 40. Lab: Neural network workspace
 
 [![](http://img.youtube.com/vi//0.jpg)]( "")
