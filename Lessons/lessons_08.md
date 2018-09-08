@@ -663,9 +663,11 @@ Answer the following 2 questions about softmax.
 
 [![Quiz: Validation set size](http://img.youtube.com/vi/-2XvoG6WD9k/0.jpg)](https://youtu.be/-2XvoG6WD9k "Quiz: Validation set size")
 
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/08_10.PNG)
+
 ### 30. Validation test set size continued
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+[![Validation test set size continued](http://img.youtube.com/vi/cgoB-MJObmw/0.jpg)](https://youtu.be/cgoB-MJObmw "Validation test set size continued")
 
 ### 3. 
 
