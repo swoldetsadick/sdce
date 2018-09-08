@@ -631,20 +631,42 @@ Answer the following 2 questions about softmax.
 
 ### 22. Minimizing cross-entropy
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+[![Minimizing cross-entropy](http://img.youtube.com/vi/YrDMXFhvh9E/0.jpg)](https://youtu.be/YrDMXFhvh9E "Minimizing cross-entropy")
 
 ### 23. Practical aspects of learning
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+[![Practical aspects of learning](http://img.youtube.com/vi/bKqkRFOOKoA/0.jpg)](https://youtu.be/bKqkRFOOKoA "Practical aspects of learning")
 
 ### 24. Quiz: Numerical stability
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+[![Quiz: Numerical stability](http://img.youtube.com/vi/_SbGcOS-jcQ/0.jpg)](https://youtu.be/_SbGcOS-jcQ "Quiz: Numerical stability")
+
+![quiz 08.14](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/08_09.PNG)
 
 ### 25. Normalized inputs and initial weights
 
+[![Normalized inputs and initial weights](http://img.youtube.com/vi/WaHQ9-UXIIg/0.jpg)](https://youtu.be/WaHQ9-UXIIg "Normalized inputs and initial weights")
+
+### 26. Measuring performance
+
+[![Measuring performance](http://img.youtube.com/vi/byP0DJImOSk/0.jpg)](https://youtu.be/byP0DJImOSk "Measuring performance")
+
+### 27. Transition: Overfitting ---> Dataset size
+
+[![Transition: Overfitting ---> Dataset size](http://img.youtube.com/vi/Lmxem7ud9yk/0.jpg)](https://youtu.be/Lmxem7ud9yk "Transition: Overfitting ---> Dataset size")
+
+### 28. Validation and test set size
+
+[![Validation and test set size](http://img.youtube.com/vi//0.jpg)]( "Validation and test set size")
+
+### 29. Quiz: Validation set size
+
 [![](http://img.youtube.com/vi//0.jpg)]( "")
 
-### 2. 
+### 30. Validation test set size continued
+
+[![](http://img.youtube.com/vi//0.jpg)]( "")
+
+### 3. 
 
 [![](http://img.youtube.com/vi//0.jpg)]( "")
