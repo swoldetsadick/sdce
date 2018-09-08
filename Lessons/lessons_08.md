@@ -453,9 +453,9 @@ as ```tf.matmul(b,a)```.
 
 ### 15. Quiz: Linear function
 
-[Quiz here]()
+[Quiz here](https://github.com/swoldetsadick/sdce/blob/master/Notebooks/Lesson_8/03/quiz.md)
 
-[Solution here]()
+[Solution here](https://github.com/swoldetsadick/sdce/blob/master/Notebooks/Lesson_8/03/quiz_solution.md)
 
 ### 16. 
 
