@@ -1330,8 +1330,8 @@ The notebook has 3 problems for you to solve:
 * Problem 2: Use TensorFlow operations to create features, labels, weight, and biases tensors
 * Problem 3: Tune the learning rate, number of steps, and batch size for the best accuracy
 
-This is a self-assessed lab. Compare your answers to the solutions in the solutions.ipynb . If you have any difficulty 
-completing the lab, Udacity provides a few services to answer any questions you might have.
+This is a self-assessed lab. Compare your answers to the solutions in the **solutions.ipynb**. If you have any 
+difficulty completing the lab, Udacity provides a few services to answer any questions you might have.
 
 ###### Help
 Remember that you can get assistance from [Knowledge](https://knowledge.udacity.com/) or the 
