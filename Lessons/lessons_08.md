@@ -335,6 +335,10 @@ Calculate the logits ```a``` and ```b``` for the following formula.
 
 ![alt text](https://s3.amazonaws.com/video.udacity-data.com/topher/2018/May/5af21fd9_codecogseqn-13/codecogseqn-13.gif)
 
+![quiz 08.14](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/08_03.PNG)
+
+![quiz 08.14](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/08_04.PNG)
+
 ###### Transposition
 
 We've been using the ```y = Wx + b``` function for our linear function.
@@ -449,7 +453,9 @@ as ```tf.matmul(b,a)```.
 
 ### 15. Quiz: Linear function
 
-[![Quiz: Linear function](http://img.youtube.com/vi//0.jpg)]( "Quiz: Linear function")
+[Quiz here]()
+
+[Solution here]()
 
 ### 16. 
 
