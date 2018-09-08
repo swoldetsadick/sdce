@@ -74,7 +74,7 @@ In this quiz, you'll use TensorFlow's ReLU function to turn the linear model bel
 
 ![quiz](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/09_01.PNG)
 
-[Here full code]()
+[Here full code](https://github.com/swoldetsadick/sdce/blob/master/Notebooks/Lesson_9/01/Quiz.md)
 
 ### 9. No neurones
 
