@@ -76,7 +76,7 @@ Download and install Docker from the [official Docker website](https://docs.dock
 Run the command below to start a jupyter notebook server with TensorFlow:
 
 ```
-docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow
+docker run -it -p 8888:8888 -p 6006:6006 -v `pwd`:/abs/path/to/some/local/folder tensorflow/tensorflow
 ```
 
 Users in China should use the ```b.gcr.io/tensorflow/tensorflow``` instead of ```gcr.io/tensorflow/tensorflow```
