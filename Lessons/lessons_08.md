@@ -218,6 +218,8 @@ with tf.Session() as sess:
 Let's see how well you understand ```tf.placeholder()``` and ```feed_dict```. The code below throws an error, but I want 
 you to make it return the number ```123```. Change line 11, so that the code returns the number ```123```.
 
+![quiz 08.08](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/08_01.PNG)
+
 ### 9. Quiz: Tensorflow math
 
 ###### TensorFlow Math
@@ -272,6 +274,8 @@ Let's apply what you learned to convert an algorithm to TensorFlow. The code bel
 and subtraction. Convert the following algorithm in regular Python to TensorFlow and print the results of the session. 
 You can use ```tf.constant()``` for the values ```10```, ```2```, and ```1```.
 
+![quiz 08.09](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/08_02.PNG)
+
 ### 10. Transition to classification
 
 ![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/58a4fb36_06-l-supervised-classification-391-1/06-l-supervised-classification-391-1.jpg)
@@ -291,7 +295,182 @@ videos, you're going to learn about one of the most popular applications of neur
 
 [![Supervised classification](http://img.youtube.com/vi/XTGsutypAPE/0.jpg)](https://youtu.be/XTGsutypAPE "Supervised classification")
 
+### 12. Let's make a deal
 
-### 1. 
+[![Let's make a deal](http://img.youtube.com/vi/l1xMgirpwCU/0.jpg)](https://youtu.be/l1xMgirpwCU "Let's make a deal")
+
+### 13. Training your logistic classifier
+
+[![Training your logistic classifier](http://img.youtube.com/vi/WQsdr1EJgz8/0.jpg)](https://youtu.be/WQsdr1EJgz8 "Training your logistic classifier")
+
+### 14. TensorFlow linea function
+
+###### TensorFlow Linear Function
+
+Let’s derive the function ```y = Wx + b```. We want to translate our input, ```x```, to labels, ```y```.
+
+For example, imagine we want to classify images as digits.
+
+```x``` would be our list of pixel values, and ```y``` would be the logits, one for each digit. Let's take a look at 
+```y = Wx```, where the weights, ```W```, determine the influence of ```x``` at predicting each ```y```.
+
+![alt text](https://s3.amazonaws.com/video.udacity-data.com/topher/2018/May/5af21f64_wx-1/wx-1.jpg)
+
+```y``` = Wx allows us to segment the data into their respective labels using a line.
+
+However, this line has to pass through the origin, because whenever ```x``` equals 0, then ```y``` is also going to 
+equal 0.
+
+We want the ability to shift the line away from the origin to fit more complex data. The simplest solution is to add a 
+number to the function, which we call “bias”.
+
+![alt text](https://s3.amazonaws.com/video.udacity-data.com/topher/2018/May/5af21f8c_wx-b/wx-b.jpg)
+
+Our new function becomes ```Wx + b```, allowing us to create predictions on linearly separable data. Let’s use a 
+concrete example and calculate the logits.
+
+###### Matrix Multiplication Quiz
+
+Calculate the logits ```a``` and ```b``` for the following formula.
+
+![alt text](https://s3.amazonaws.com/video.udacity-data.com/topher/2018/May/5af21fd9_codecogseqn-13/codecogseqn-13.gif)
+
+###### Transposition
+
+We've been using the ```y = Wx + b``` function for our linear function.
+
+But there's another function that does the same thing, ```y = xW + b```. These functions do the same thing and are 
+interchangeable, except for the dimensions of the matrices involved.
+
+To shift from one function to the other, you simply have to swap the row and column dimensions of each matrix. This is 
+called transposition.
+
+For rest of this lesson, we actually use ```xW + b```, because this is what TensorFlow uses.
+
+![alt text](https://s3.amazonaws.com/video.udacity-data.com/topher/2018/May/5af220e2_codecogseqn-18/codecogseqn-18.gif)
+
+The above example is identical to the quiz you just completed, except that the matrices are transposed.
+
+```x``` now has the dimensions 1x3, ```W``` now has the dimensions 3x2, and ```b``` now has the dimensions 1x2. 
+Calculating this will produce a matrix with the dimension of 1x2.
+
+You'll notice that the elements in this 1x2 matrix are the same as the elements in the 2x1 matrix from the quiz. Again, 
+these matrices are simply transposed.
+
+![alt text](https://s3.amazonaws.com/video.udacity-data.com/topher/2018/May/5af2210f_codecogseqn-20/codecogseqn-20.gif)
+
+We now have our logits! The columns represent the logits for our two labels.
+
+Now you can learn how to train this function in TensorFlow.
+
+###### Weights and Bias in TensorFlow
+
+The goal of training a neural network is to modify weights and biases to best predict the labels. In order to use 
+weights and bias, you'll need a Tensor that can be modified. This leaves out ```tf.placeholder()``` and ```tf.constant()```
+, since those Tensors can't be modified. This is where ```tf.Variable``` class comes in.
+
+###### tf.Variable()
+
+```
+x = tf.Variable(5)
+```
+
+The ```tf.Variable``` class creates a tensor with an initial value that can be modified, much like a normal Python variable. 
+This tensor stores its state in the session, so you must initialize the state of the tensor manually. You'll use the 
+```tf.global_variables_initializer()``` function to initialize the state of all the Variable tensors.
+
+###### Initialization
+
+```
+init = tf.global_variables_initializer()
+with tf.Session() as sess:
+    sess.run(init)
+```
+
+The ```tf.global_variables_initializer()``` call returns an operation that will initialize all TensorFlow variables from 
+the graph. You call the operation using a session to initialize all the variables as shown above. Using the 
+```tf.Variable``` class allows us to change the weights and bias, but an initial value needs to be chosen.
+
+Initializing the weights with random numbers from a normal distribution is good practice. Randomizing the weights helps 
+the model from becoming stuck in the same place every time you train it. You'll learn more about this in the next lesson
+, when you study gradient descent.
+
+Similarly, choosing weights from a normal distribution prevents any one weight from overwhelming other weights. You'll 
+use the ```tf.truncated_normal()``` function to generate random numbers from a normal distribution.
+
+###### tf.truncated_normal()
+
+```
+n_features = 120
+n_labels = 5
+weights = tf.Variable(tf.truncated_normal((n_features, n_labels)))
+```
+
+The ```tf.truncated_normal()``` function returns a tensor with random values from a normal distribution whose magnitude 
+is no more than 2 standard deviations from the mean.
+
+Since the weights are already helping prevent the model from getting stuck, you don't need to randomize the bias. Let's 
+use the simplest solution, setting the bias to 0.
+
+```
+tf.zeros()
+n_labels = 5
+bias = tf.Variable(tf.zeros(n_labels))
+```
+
+The ```tf.zeros()``` function returns a tensor with all zeros.
+
+###### Linear Classifier Quiz
+
+![alt text](https://s3.amazonaws.com/video.udacity-data.com/topher/2018/May/5af2214a_mnist-012/mnist-012.png)
+
+You'll be classifying the handwritten numbers ```0```, ```1```, and ```2``` from the MNIST dataset using TensorFlow. The 
+above is a small sample of the data you'll be training on. Notice how some of the 1s are written with a [serif](https://en.wikipedia.org/wiki/Serif) 
+at the top and at different angles. The similarities and differences will play a part in shaping the weights of the model.
+
+![alt text](https://s3.amazonaws.com/video.udacity-data.com/topher/2018/May/5af22171_weights-0-1-2/weights-0-1-2.png)
+
+The images above are trained weights for each label (```0```, ```1```, and ```2```). The weights display the unique 
+properties of each digit they have found. Complete this quiz to train your own weights using the MNIST dataset.
+
+###### Instructions
+
+1. Open quiz.py.
+    1. Implement ```get_weights``` to return a ```tf.Variable``` of weights
+    2. Implement ```get_biases``` to return a ```tf.Variable``` of biases
+    3. Implement ```xW + b``` in the ```linear``` function
+
+2. Open sandbox.py
+    1. Initialize all weights
+
+Since ```xW``` in ```xW + b``` is matrix multiplication, you have to use the ```tf.matmul()``` function instead of 
+```tf.multiply()```. Don't forget that order matters in matrix multiplication, so ```tf.matmul(a,b)``` is not the same 
+as ```tf.matmul(b,a)```.
+
+### 15. Quiz: Linear function
+
+[![Quiz: Linear function](http://img.youtube.com/vi//0.jpg)]( "Quiz: Linear function")
+
+### 16. 
+
+[![](http://img.youtube.com/vi//0.jpg)]( "")
+
+### 17. 
+
+[![](http://img.youtube.com/vi//0.jpg)]( "")
+
+### 18. 
+
+[![](http://img.youtube.com/vi//0.jpg)]( "")
+
+### 19. 
+
+[![](http://img.youtube.com/vi//0.jpg)]( "")
+
+### 20. 
+
+[![](http://img.youtube.com/vi//0.jpg)]( "")
+
+### 2. 
 
 [![](http://img.youtube.com/vi//0.jpg)]( "")
