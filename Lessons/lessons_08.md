@@ -459,7 +459,36 @@ as ```tf.matmul(b,a)```.
 
 ### 16. 
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+You can’t train a neural network on a single sample. Let’s apply n samples of ```x``` to the function ```y = Wx + b```, 
+which becomes ```Y = WX + B```.
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/November/583a35b9_new-wx-b-2/new-wx-b-2.jpg)
+
+For every sample of ```X``` (```X1```, ```X2```, ```X3```), we get logits for label 1 (```Y1```) and label 2 (```Y2```).
+
+In order to add the bias to the product of ```WX```, we had to turn ```b``` into a matrix of the same shape. This is a 
+bit unnecessary, since the bias is only two numbers. It should really be a vector.
+
+We can take advantage of an operation called broadcasting used in TensorFlow and Numpy. This operation allows arrays of 
+different dimension to be multiplied with each other. For example:
+
+```
+import numpy as np
+t = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])
+u = np.array([1, 2, 3])
+print(t + u)
+```
+
+The code above will print...
+
+```
+[[ 2  4  6]
+ [ 5  7  9]
+ [ 8 10 12]
+ [11 13 15]]
+```
+
+This is because ```u``` is the same dimension as the last dimension in ```t```.
 
 ### 17. 
 
@@ -469,13 +498,15 @@ as ```tf.matmul(b,a)```.
 
 [![](http://img.youtube.com/vi//0.jpg)]( "")
 
-### 19. 
+### 19. One-hot encoding
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+[![One-hot encoding](http://img.youtube.com/vi//0.jpg)](https://youtu.be/phYsxqlilUk "One-hot encoding")
 
-### 20. 
+### 20. Quizz: One-hot encoding
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+![quiz 8.20](https://d17h27t6h515a5.cloudfront.net/topher/2016/October/58015400_base-hot-enc/base-hot-enc.png)
+
+![quiz 08.14](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/08_.PNG)
 
 ### 2. 
 
