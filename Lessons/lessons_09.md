@@ -559,30 +559,30 @@ print('Loaded Weights and Bias successfully.')
 
 That worked! The Tensor names match and the data loaded correctly.
 
-### 16. 
+### 16. Regularization introduction
 
 [![](http://img.youtube.com/vi//0.jpg)]( "")
 
-### 17. 
+### 17. Regularization 
 
 [![](http://img.youtube.com/vi//0.jpg)]( "")
 
-### 18. 
+### 18.  Regularization quiz
 
 [![](http://img.youtube.com/vi//0.jpg)]( "")
 
-### 19. 
+### 19. Dropout
 
 [![](http://img.youtube.com/vi//0.jpg)]( "")
 
-### 20. 
+### 20. Dropout part 2
 
 [![](http://img.youtube.com/vi//0.jpg)]( "")
 
-### 21. 
+### 21. Quiz: TF dropout
 
 [![](http://img.youtube.com/vi//0.jpg)]( "")
 
-### 22. 
+### 22. Quiz 2: TF dropout
 
 [![](http://img.youtube.com/vi//0.jpg)]( "")
