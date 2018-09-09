@@ -579,23 +579,31 @@ That worked! The Tensor names match and the data loaded correctly.
 
 ### 16. Regularization introduction
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+[![Regularization introduction](http://img.youtube.com/vi/pECnr-5F3_Q/0.jpg)](https://youtu.be/pECnr-5F3_Q "Regularization introduction")
 
 ### 17. Regularization 
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+[![Regularization](http://img.youtube.com/vi/QcJBhbuCl5g/0.jpg)](https://youtu.be/QcJBhbuCl5g "Regularization")
 
 ### 18.  Regularization quiz
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+[![Regularization quiz](http://img.youtube.com/vi/E0eEW6V0_sA/0.jpg)](https://youtu.be/E0eEW6V0_sA "Regularization quiz")
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2017/March/58daed47_regularization-quiz/regularization-quiz.png)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/09_02.PNG)
+
+**Answer:**
+
+[![Regularization quiz answer](http://img.youtube.com/vi/_wqHVtx_esM/0.jpg)](https://youtu.be/_wqHVtx_esM "Regularization quiz answer")
 
 ### 19. Dropout
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+[![Dropout](http://img.youtube.com/vi/6DcImJS8uV8/0.jpg)](https://youtu.be/6DcImJS8uV8 "Dropout")
 
 ### 20. Dropout part 2
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+[![Dropout part 2](http://img.youtube.com/vi/8nG8zzJMbZw/0.jpg)](https://youtu.be/8nG8zzJMbZw "Dropout part 2")
 
 ### 21. Quiz: TF dropout
 
