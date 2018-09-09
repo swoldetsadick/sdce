@@ -269,9 +269,13 @@ with tf.Session() as sess:
 ```
 
 > Weights:
+
 > [[-0.97990924 1.03016174 0.74119264]
+
 > [-0.82581609 -0.07361362 -0.86653847]]
+
 > Bias:
+
 > [ 1.62978125 -0.37812829 0.64723819]
 
 The Tensors ```weights``` and ```bias``` are set to random values using the ```tf.truncated_normal()``` function. The 
@@ -308,9 +312,13 @@ with tf.Session() as sess:
 ```
 
 > Weights:
+
 > [[-0.97990924 1.03016174 0.74119264]
+
 > [-0.82581609 -0.07361362 -0.86653847]]
+
 > Bias:
+
 > [ 1.62978125 -0.37812829 0.64723819]
 
 You'll notice you still need to create the ```weights``` and ```bias``` Tensors in Python. The ```tf.train.Saver.restore()``` 
@@ -497,11 +505,17 @@ with tf.Session() as sess:
 The code above prints out the following:
 
 > Save Weights: Variable:0
+
 > Save Bias: Variable_1:0
+
 > Load Weights: Variable_1:0
+
 > Load Bias: Variable:0
+
 > ...
+
 > InvalidArgumentError (see above for traceback): Assign requires shapes of both tensors to match.
+
 > ...
 
 You'll notice that the ```name``` properties for ```weights``` and ```bias``` are different than when you saved the 
@@ -552,9 +566,13 @@ print('Loaded Weights and Bias successfully.')
 ```
 
 > Save Weights: weights_0:0
+
 > Save Bias: bias_0:0
+
 > Load Weights: weights_0:0
+
 > Load Bias: bias_0:0
+
 > Loaded Weights and Bias successfully.
 
 That worked! The Tensor names match and the data loaded correctly.
