@@ -99,11 +99,79 @@ Next, let’s look at some implementation details.
 
 ### 7. Filters
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+###### Breaking up an Image
+
+The first step for a CNN is to break up the image into smaller pieces. We do this by selecting a width and height that 
+defines a filter.
+
+The filter looks at small pieces, or patches, of the image. These patches are the same size as the filter.
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/November/58377d67_vlcsnap-2016-11-24-15h52m47s438/vlcsnap-2016-11-24-15h52m47s438.png)
+
+We then simply slide this filter horizontally or vertically to focus on a different piece of the image.
+
+The amount by which the filter slides is referred to as the 'stride'. The stride is a hyperparameter which you, the 
+engineer, can tune. Increasing the stride reduces the size of your model by reducing the number of total patches each 
+layer observes. However, this usually comes with a reduction in accuracy.
+
+Let’s look at an example. In this zoomed in image of the dog, we first start with the patch outlined in red. The width 
+and height of our filter define the size of this square.
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/December/5840fdac_retriever-patch/retriever-patch.png)
+
+We then move the square over to the right by a given stride (2 in this case) to get another patch.
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/December/5840fe04_retriever-patch-shifted/retriever-patch-shifted.png)
+
+What's important here is that **we are grouping together adjacent pixels** and treating them as a collective.
+
+In a normal, non-convolutional neural network, we would have ignored this adjacency. In a normal network, we would have 
+connected every pixel in the input image to a neuron in the next layer. In doing so, we would not have taken advantage 
+of the fact that pixels in an image are close together for a reason and have special meaning.
+
+By taking advantage of this local structure, our CNN learns to classify local patterns, like shapes and objects, in an 
+image.
+
+###### Filter Depth
+
+It's common to have more than one filter. Different filters pick up different qualities of a patch. For example, one 
+filter might look for a particular color, while another might look for a kind of object of a specific shape. The amount 
+of filters in a convolutional layer is called the filter depth.
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/November/58377e4f_neilsen-pic/neilsen-pic.png)
+
+How many neurons does each patch connect to?
+
+That’s dependent on our filter depth. If we have a depth of ```k```, we connect each patch of pixels to ```k``` neurons 
+in the next layer. This gives us the height of ```k``` in the next layer, as shown below. In practice, ```k``` is a 
+hyperparameter we tune, and most CNNs tend to pick the same starting values.
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/December/5840ffda_filter-depth/filter-depth.png)
+
+But why connect a single patch to multiple neurons in the next layer? Isn’t one neuron good enough?
+
+Multiple neurons can be useful because a patch can have multiple interesting characteristics that we want to capture.
+
+For example, one patch might include some white teeth, some blonde whiskers, and part of a red tongue. In that case, we 
+might want a filter depth of at least three - one for each of teeth, whiskers, and tongue.
+
+![alt text](https://d17h27t6h515a5.cloudfront.net/topher/2016/December/584104c8_teeth-whiskers-tongue/teeth-whiskers-tongue.png)
+
+Having multiple neurons for a given patch ensures that our CNN can learn to capture whatever characteristics the CNN 
+learns are important.
+
+Remember that the CNN isn't "programmed" to look for certain characteristics. Rather, it learns **on its own which** 
+characteristics to notice.
 
 ### 8. Features map sizes
 
-[![](http://img.youtube.com/vi//0.jpg)]( "")
+[![Features map sizes](http://img.youtube.com/vi/lp1NrLZnCUM/0.jpg)](https://youtu.be/lp1NrLZnCUM "Features map sizes")
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/10_01.PNG)
+
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/10_01.PNG)
+
+[![Features map sizes answer](http://img.youtube.com/vi/W4xtf8LTz1c/0.jpg)](https://youtu.be/W4xtf8LTz1c "Features map sizes answer")
 
 ### 9. Convolutions continued
 
