@@ -167,9 +167,13 @@ characteristics to notice.
 
 [![Features map sizes](http://img.youtube.com/vi/lp1NrLZnCUM/0.jpg)](https://youtu.be/lp1NrLZnCUM "Features map sizes")
 
-![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/10_01.PNG)
+![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/10_02.PNG)
 
-![alt text](https://raw.githubusercontent.com/swoldetsadick/sdce/master/Lessons/images/10_01.PNG)
+_n_ is pixel size, _p_ is padding, _f_ filter size and _s_ stride.
+
+Same padding (_p_ = (_f_ - 1) / 2) and Valid padding (_p_ = 0):
+
+new_n = &#8970; ((_n_ + 2_p_ - _f_ ) / (_s_)) + 1 &#8971;
 
 [![Features map sizes answer](http://img.youtube.com/vi/W4xtf8LTz1c/0.jpg)](https://youtu.be/W4xtf8LTz1c "Features map sizes answer")
 
